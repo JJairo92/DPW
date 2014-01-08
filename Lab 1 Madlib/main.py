@@ -48,7 +48,13 @@ a = calcAcceleration(velFinal, velInitial, time) # time is the same one from the
 
 
 # Force
-mass = 
+mass = input("To find the Force of something, we need the mass, what is the mass? ")
+
+# Force function accepting 2 parameters - mass and acceleration
+def calcForce(m, a):
+	force = m * a
+	return force
+f = calcForce(mass, a)
 
 
 # Madlib
