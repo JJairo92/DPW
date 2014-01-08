@@ -4,14 +4,21 @@
 # Madlib Lab
 
 # Name
-name = raw_input("Please type your name: ") #raw_input will accept user inputs as strings
+name = raw_input("Please type your friend's name: ") #raw_input will accept user inputs as strings
 
 # Friend's age
-age = raw_input("")
+age = input("How old is your friend? ")
+
+friendClass = "Not known"
+if age >= 18:
+	friendClass = "adult"
+else:
+	friendClass = "not an adult yet"
+
 
 
 # Male/Female and the conditional for pronouns
-gender = raw_input("Are you a male or a female? ")
+gender = raw_input("Is your friend a male or a female? ")
 if gender == "male" or gender == "Male":
 	genderPronoun = "He"
 else:
@@ -40,8 +47,12 @@ def calcAcceleration(f, i, t):
 a = calcAcceleration(velFinal, velInitial, time) # time is the same one from the velocity formula
 
 
+# Force
+mass = 
+
+
 # Madlib
-madlib = '''I cannot believe how good of a friend {name} is. {genderPronoun} helped me with my physics homework. {genderPronoun} showed me the equation to find the Velocity of something. The equation is velocity = distance / time. For example if the distance traveled is {distance}, and the time of travel is {time}; the velocity would be {v}. {genderPronoun} also showed me the equation for Acceleration, which is Acceleration = (Velocity(Final) - Velocity(Initial)) / Time. For example if the Final Velocity is {velFinal}, the Initial Velocity is {velInitial}, and the time is {time}; the acceleration is {a}. {genderPronoun} also showed me one last equation'''
+madlib = '''I cannot believe how good of a friend {name} is. {genderPronoun} is considered {friendClass}. {genderPronoun} helped me with my physics homework. {genderPronoun} showed me the equation to find the Velocity of something. The equation is velocity = distance / time. For example if the distance traveled is {distance}, and the time of travel is {time}; the velocity would be {v}. {genderPronoun} also showed me the equation for Acceleration, which is Acceleration = (Velocity(Final) - Velocity(Initial)) / Time. For example if the Final Velocity is {velFinal}, the Initial Velocity is {velInitial}, and the time is {time}; the acceleration is {a}. {genderPronoun} also showed me one last equation, the equation of Force, which is Force = Mass * Acceleration. If the mass is {mass}, and the acceleration is {a}; the force would be {f}.'''
 madlibFormatted = madlib.format(**locals())
 
 print madlibFormatted
