@@ -13,10 +13,14 @@ if gender == "male" or gender == "Male":
 else:
 	genderPronoun = "She"
 
+# 
+
 
 # Madlib
-message = '''I cannot believe how good of a friend {name} is. {genderPronoun} helped me with 
-my homework.'''
-messageFormatted = message.format(**locals())
+madlib = '''I cannot believe how good of a friend {name} is. {genderPronoun} helped me with 
+my physics homework. {genderPronoun} showed me the equation to find the Gravitational Force.
+The equation is F8 = G(m1*m2/d^2); G being the gravitational constant, m1 being mass 1, m2
+being mass 2, and d being distance.'''
+madlibFormatted = madlib.format(**locals())
 
-print messageFormatted
+print madlibFormatted
