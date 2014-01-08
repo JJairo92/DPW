@@ -60,7 +60,7 @@ f = calcForce(mass, a)
 # All the variables from above will be added to an array or object
 strings = [name, friendClass, genderPronoun]
 numbers = dict()
-numbers = dict(velocity=v, acceleration=a, force=f, time=time, distance=distance, mass=mass)
+numbers = dict(velocity=v, acceleration=a, force=f, time=time, distance=distance, mass=mass, velI=velInitial, velF=velFinal)
 
 # Madlib
 madlib = '''I cannot believe how good of a friend {strings[0]} is. {strings[2]} is considered {strings[1]}. {strings[2]} helped me with my physics homework. {strings[2]} showed me the equation to find the Velocity of something. The equation is velocity = distance / time. For example if the distance traveled is {numbers[distance]}, and the time of travel is {numbers[time]}; the velocity would be {numbers[velocity]}. {strings[2]} also showed me the equation for Acceleration, which is Acceleration = (Velocity(Final) - Velocity(Initial)) / Time. For example if the Final Velocity is {velFinal}, the Initial Velocity is {velInitial}, and the time is {numbers[time]}; the acceleration is {numbers[acceleration]}. {strings[2]} also showed me one last equation, the equation of Force, which is Force = Mass * Acceleration. If the mass is {numbers[mass]}, and the acceleration is {numbers[acceleration]}; the force would be {numbers[force]}.'''
