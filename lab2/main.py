@@ -16,6 +16,7 @@ class MainHandler(webapp2.RequestHandler):
     	form = '''
     	<form action="">
     		<label>First Name: </label><input type="text" placeholder="John" />
+    		<label>Last Name: </label><input type="text" placeholder="Smith" />
     		<input type="submit" value="Send" />
     	</form>
     	'''
