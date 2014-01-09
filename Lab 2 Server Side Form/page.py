@@ -7,3 +7,7 @@ class Page():
 			<link rel="stylesheet" href="css/main.css" type="text/css" />
 		</head>
 		<body>'''
+
+		self.__footer = '''
+		</body>
+	</html>'''
