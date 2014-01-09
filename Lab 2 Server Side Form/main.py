@@ -7,7 +7,11 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+    	form = '''
+    	<form method="GET" action="">
+    		
+    	</form>
+    	'''
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
