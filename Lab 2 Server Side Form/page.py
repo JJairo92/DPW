@@ -13,4 +13,7 @@ class Page():
 	</html>'''
 
 	def open(self):
-		return.
+		return self.__header
+
+	def close(self):
+		return self.__footer
