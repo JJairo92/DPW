@@ -12,7 +12,7 @@ class MainHandler(webapp2.RequestHandler):
     	page = Page()
 
     	self.response.write(page.open())
-
+    	
     	form = '''
     	<form method="GET">
     		<label for="first-name">First Name:</label>
