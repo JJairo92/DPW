@@ -16,23 +16,25 @@ class MainHandler(webapp2.RequestHandler):
     	form = '''
     	<form method="GET">
     		<label for="first-name">First Name:</label>
-			<input class="input" type="text" name="first-name" id="first-name" autofocus="autofocus" placeholder="John" />
-
     		<label for="last-name">Last Name:</label>
-			<input class="input" type="text" name="last-name" id="last-name" autofocus="autofocus" placeholder="Smith" />
-
     		<label for="email">Email Address: </label>
-    		<input class="input" type="email" placeholder="johnsmith@email.com" name="email"/><br />
-
     		<label for="system">What system information do you prefer?</label>
+
+
+			<input class="input" type="text" name="first-name" id="first-name" autofocus="autofocus" placeholder="John" />
+			<input class="input" type="text" name="last-name" id="last-name" autofocus="autofocus" placeholder="Smith" />
+    		<input class="input" type="email" placeholder="johnsmith@email.com" name="email" id="email" /><br />
+
+    		
 			<select class="input" name="system" id="system">
-				<option>Console</option>
-				<option>PC</option>
-				<option>Mobile</option>
+					<option>Console</option>
+					<option>PC</option>
+					<option>Mobile</option>
 			</select><br />
     		
-			<input type="checkbox" name="agreement" id="agreement" required="required" />I agree to sign-up for this newsletter.<br />
-
+    		<div id="checkbox">
+				<input type="checkbox" name="agreement" id="agreement" required="required" />I agree to sign-up for this newsletter.<br />
+			</div>
     		<input type="submit" value="Send" />
     	</form>
     	'''

@@ -2,15 +2,46 @@
 h1 {
 	margin: 0 auto;
 	padding: 2% 0;
+	color: #3fb1e3;;
 }
 
 form {
 	border: 1px solid #3fb1e3;
 	width: 600px;
 	margin: 0 auto;
+	background-color: #5dd0d0;
+	border-radius: 10px;
 }
 
 body {
 	background-color: #eee;
 	text-align: center;
+	color: #f0eb6a;
+}
+
+/* --------------- Form Inputs and Labels --------------- */
+label {
+	float: left;
+	clear: left;
+	width: 300px;
+	text-align: right;
+	margin-bottom: 2%;
+}
+
+select {
+	float: left;
+	margin-left: 12%;
+}
+
+#checkbox {
+	clear: both;
+	margin: 3% 0;
+}
+
+.input {
+	margin-bottom: 2%;
+}
+
+#option {
+	margin-left: 30%;
 }
