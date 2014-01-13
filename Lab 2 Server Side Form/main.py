@@ -18,7 +18,7 @@ class MainHandler(webapp2.RequestHandler):
     		<label for="first-name">First Name:</label>
     		<label for="last-name">Last Name:</label>
     		<label for="email">Email Address: </label>
-    		<label for="system">What system information do you prefer?</label>
+    		<label for="system">Information in Newsletter?</label>
 
 
 			<input class="input" type="text" name="first-name" id="first-name" autofocus="autofocus" placeholder="John" />
@@ -30,6 +30,7 @@ class MainHandler(webapp2.RequestHandler):
 					<option>Console</option>
 					<option>PC</option>
 					<option>Mobile</option>
+					<option>Everything</option>
 			</select><br />
     		
     		<div id="checkbox">
