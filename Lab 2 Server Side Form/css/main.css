@@ -19,3 +19,35 @@ body {
 	text-align: center;
 	color: #fff;
 }
+
+/* --------------- Form Inputs and Labels --------------- */
+label {
+	float: left;
+	clear: left;
+	width: 250px;
+	text-align: right;
+	margin-bottom: 2%;
+}
+
+select {
+	float: left;
+	margin-left: 12%;
+}
+
+#checkbox {
+	clear: both;
+	margin: 3% 0;
+}
+
+#agreement {
+	margin-right: 2%;
+}
+
+.input {
+	margin-bottom: 2%;
+	width: 200px;
+}
+
+#option {
+	margin-left: 30%;
+}
