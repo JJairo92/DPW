@@ -3,10 +3,11 @@ class Page():
 		self.__header = '''<!DOCTYPE>
 	<html lang="en">
 		<head>
-			<title>Survey</title>
+			<title>Gamer Addictive | Newsletter Sign-Up</title>
 			<link rel="stylesheet" href="css/main.css" type="text/css" />
 		</head>
-		<body>'''
+		<body>
+			<h1>Gamer Addictive Newsletter Sign-Up</h1>'''
 
 		self.__footer = '''
 		</body>
