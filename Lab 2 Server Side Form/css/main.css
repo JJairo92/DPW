@@ -1,3 +1,15 @@
+/* --------------- Main --------------- */
+h1 {
+	margin: 0 auto;
+	padding: 2% 0;
+}
+
+form {
+	border: 1px solid #3fb1e3;
+	width: 600px;
+	margin: 0 auto;
+}
+
 body {
 	background-color: #eee;
 	text-align: center;
