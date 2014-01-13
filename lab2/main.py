@@ -36,7 +36,7 @@ class MainHandler(webapp2.RequestHandler):
     		<div id="checkbox">
 				<input type="checkbox" name="agreement" id="agreement" required="required" />I agree to sign-up for this newsletter.<br />
 			</div>
-    		<input type="submit" value="Send" />
+    		<input type="submit" value="Sign-Up!" />
     	</form>
     	'''
 
