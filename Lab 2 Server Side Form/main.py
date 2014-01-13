@@ -14,10 +14,12 @@ class MainHandler(webapp2.RequestHandler):
     	self.response.write(page.open())
 
     	form = '''
-    	<form action="">
-    		<label>First Name: </label><input type="text" placeholder="John" />
-    		<label>Last Name: </label><input type="text" placeholder="Smith" />
-    		<input type="submit" value="Send" />
+    	<form method="GET">
+    		<label for="name">Name: </label>
+    		<input type="text" placeholder="John Smith" /><br />
+
+    		<label for="email">Email Address: </label>
+    		<input type="email" placeholder="johnsmith@email.com" name="email"/><br />
     	</form>
     	'''
 
