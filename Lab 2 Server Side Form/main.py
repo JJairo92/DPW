@@ -20,6 +20,13 @@ class MainHandler(webapp2.RequestHandler):
 
     		<label for="email">Email Address: </label>
     		<input type="email" placeholder="johnsmith@email.com" name="email"/><br />
+
+    		<label for="system">What system information do you prefer?</label>
+			<select name="system" id="system">
+				<option>Console</option>
+				<option>PC</option>
+				<option>Mobile</option>
+			</select>
     	</form>
     	'''
 

@@ -1,3 +1,10 @@
+/* --------------- Main --------------- */
+
+form {
+	border: 1px solid #3fb1e3;
+	width: 500px;
+}
+
 body {
 	background-color: #eee;
 	text-align: center;
