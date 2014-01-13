@@ -27,6 +27,10 @@ class MainHandler(webapp2.RequestHandler):
 				<option>PC</option>
 				<option>Mobile</option>
 			</select>
+
+    		<label for="agreement">Agreement:</label>
+			<input type="checkbox" name="agreement" id="agreement" required="required" />I have read and agree to the <a href="#">User Agreement</a>.
+    		<input type="submit" value="Send" />
     	</form>
     	'''
 
