@@ -5,9 +5,15 @@
 
 import webapp2
 
+from page import Page
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        page = Page()
+
+    	self.response.write(page.open())
+
+    	self.response.write(page.close())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
