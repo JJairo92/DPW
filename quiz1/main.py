@@ -13,3 +13,9 @@ if width == height:
 	shape = "square"
 else:
 	shape = "rectangle"
+
+# Area Function
+def calcArea(w, h):
+	area = w * h
+	return area
+a = calcArea(width, height)
