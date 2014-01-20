@@ -10,6 +10,7 @@ class MainHandler(webapp2.RequestHandler):
         page = PageBase()
         page.title = "Animal Classes"
         page.css = '<link rel="stylesheet" type="text/css" href="css/main.css"  />'
+        page.update()
 
     	self.response.write(page.header())
 
@@ -43,3 +44,6 @@ class PageBase(object):
 
 	def footer(self):
 		return self._footer
+
+	def update(self):
+		self._header = self._header.format(**locals())
