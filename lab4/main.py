@@ -43,7 +43,26 @@ class PageBase(object):
 			<button><a href="">Deer</a></button>
 		</nav>'''
 
-		self._body = ''''''
+		self._body = '''<h2>{self.name}</h2>
+		<p class="properties">Phylum:</p><p>
+		<p class="properties">Class:</p><p>
+		<p class="properties">Order:</p><p>
+		<p class="properties">Family:</p><p>
+		<p class="properties">Genus:</p><p>
+		<p class="properties">Average Lifespan:</p><p>
+		<p class="properties">Habitat:</p><p>
+		<p class="properties">Geolocation:</p><p>
+		<p class="properties">Sound:</p><p>
+
+		<p class="prop-info">dude</p>
+		<p class="prop-info">dude</p>
+		<p class="prop-info">dude</p>
+		<p class="prop-info">dude</p>
+		<p class="prop-info">dude</p>
+		<p class="prop-info">dude</p>
+		<p class="prop-info">dude</p>
+		<p class="prop-info">dude</p>
+		<p class="prop-info">dude</p>'''
 
 		self._footer = '''
 		</body>
