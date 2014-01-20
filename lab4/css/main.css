@@ -6,3 +6,23 @@ body {
 nav {
 	list-style-type: none;
 }
+
+nav a {
+	text-decoration: none;
+}
+
+footer {
+	clear: both;
+}
+
+/* --------------- Main Info --------------- */
+.properties {
+	font-weight: bold;
+	float: left;
+	clear: left;
+	margin: 1% 8% 1% 0;
+}
+
+.prop-info {
+	margin: 2% 0;
+}

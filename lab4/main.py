@@ -10,10 +10,14 @@ class MainHandler(webapp2.RequestHandler):
         page = PageBase()
         page.title = "Animal Classes"
         page.css = '<link rel="stylesheet" type="text/css" href="css/main.css"  />'
+        page.name = "Puma"
         page.update()
+
+        # animals = [puma,bear,wolf,lion,deer]
 
     	self.response.write(page.header())
     	self.response.write(page.nav())
+    	self.response.write(page.body())
     	self.response.write(page.footer())
 
 app = webapp2.WSGIApplication([
@@ -32,12 +36,14 @@ class PageBase(object):
 			<h1>Animal Classes</h1>'''
 
 		self._nav = '''<nav>
-			<li><a href="">Puma</a></li>
-			<li><a href="">Bear</a></li>
-			<li><a href="">Wolf</a></li>
-			<li><a href="">Lion</a></li>
-			<li><a href="">Deer</a></li>
+			<button><a href="">Puma</a></button>
+			<button><a href="">Bear</a></button>
+			<button><a href="">Wolf</a></button>
+			<button><a href="">Lion</a></button>
+			<button><a href="">Deer</a></button>
 		</nav>'''
+
+		self._body = ''''''
 
 		self._footer = '''
 		</body>
@@ -53,10 +59,14 @@ class PageBase(object):
 	def nav(self):
 		return self._nav
 
+	def body(self):
+		return self._body
+
 	def footer(self):
 		return self._footer
 
 	def update(self):
 		self._header = self._header.format(**locals())
+		self._body = self._body.format(**locals())
 
 # class 
