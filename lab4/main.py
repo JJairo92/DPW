@@ -13,7 +13,7 @@ class MainHandler(webapp2.RequestHandler):
         page.update()
 
     	self.response.write(page.header())
-
+    	self.response.write(page.nav())
     	self.response.write(page.footer())
 
 app = webapp2.WSGIApplication([
@@ -31,6 +31,14 @@ class PageBase(object):
 		<body>
 			<h1>Animal Classes</h1>'''
 
+		self._nav = '''<nav>
+			<li><a href="">Puma</a></li>
+			<li><a href="">Bear</a></li>
+			<li><a href="">Wolf</a></li>
+			<li><a href="">Lion</a></li>
+			<li><a href="">Deer</a></li>
+		</nav>'''
+
 		self._footer = '''
 		</body>
 
@@ -42,8 +50,13 @@ class PageBase(object):
 	def header(self):
 		return self._header
 
+	def nav(self):
+		return self._nav
+
 	def footer(self):
 		return self._footer
 
 	def update(self):
 		self._header = self._header.format(**locals())
+
+# class 
