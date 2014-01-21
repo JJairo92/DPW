@@ -12,6 +12,17 @@ class MainHandler(webapp2.RequestHandler):
 		page.css = '<link rel="stylesheet" type="text/css" href="css/main.css"  />'
 		page.update()
 
+		puma = Animal()
+		puma.name = "Puma"
+		puma.phylum = "Chordata"
+		puma.classs = "Mammalia"
+		puma.order = "Carnivora"
+		puma.family = "Felidae"
+		puma.genus = "Puma"
+		puma.lifespan = "10 to 15 years"
+		puma.habitat = "Mountain Forest and Jungle"
+		puma.geolocation = "North and South America"
+
 		
 
 		animals = [puma,bear,wolf]
