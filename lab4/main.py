@@ -23,6 +23,17 @@ class MainHandler(webapp2.RequestHandler):
 		puma.habitat = "Mountain Forest and Jungle"
 		puma.geolocation = "North and South America"
 
+		bear = Animal()
+		bear.name = "Bear"
+		bear.phylum = "Chordata"
+		bear.classs = "Mammalia"
+		bear.order = "Carnivora"
+		bear.family = "Ursidae"
+		bear.genus = "Ursus"
+		bear.lifespan = "15 to 35 years"
+		bear.habitat = "Forest and Mountainous Regions"
+		bear.geolocation = "North America, South America, Europe, and Asia"
+
 		
 
 		animals = [puma,bear,wolf]
