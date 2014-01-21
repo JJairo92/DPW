@@ -6,23 +6,38 @@
 import webapp2
 
 class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        page = PageBase()
-        page.title = "Animal Classes"
-        page.css = '<link rel="stylesheet" type="text/css" href="css/main.css"  />'
-        page.name = "Puma"
-        page.update()
+	def get(self):
+		page = MainInfo()
+		page.title = "Animal Classes"
+		page.css = '<link rel="stylesheet" type="text/css" href="css/main.css"  />'
+		page.update()
 
-        # animals = [puma,bear,wolf,lion,deer]
+		
 
-    	self.response.write(page.header())
-    	self.response.write(page.nav())
-    	self.response.write(page.body())
-    	self.response.write(page.footer())
+		self.response.write(page.header)
+		self.response.write(page.nav)
+		if self.request.GET:
+			a = int(self.request.GET('animal'])
+			self.response.write(page.body(animals[a]))
+		self.response.write(page.footer)
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+	('/', MainHandler)
 ], debug=True)
+
+class Animal(object):
+	def __init__(self):
+		self.name = ''
+		self.phylum = ''
+		self.classs = ''
+		self.order = ''
+		self.family = ''
+		self.genus = ''
+		self.img = ''
+		self.lifespan = ''
+		self.habitat = ''
+		self.geolocation = ''
+		self.sound = ''
 
 class PageBase(object):
 	def __init__(self):
@@ -35,34 +50,12 @@ class PageBase(object):
 		<body>
 			<h1>Animal Classes</h1>'''
 
-		self._nav = '''<nav>
-			<button><a href="">Puma</a></button>
-			<button><a href="">Bear</a></button>
-			<button><a href="">Wolf</a></button>
-			<button><a href="">Lion</a></button>
-			<button><a href="">Deer</a></button>
+		self._nav = '''
+		<nav>
+			<button><a href="/animal=0">Puma</a></button>
+			<button><a href="/animal=1">Bear</a></button>
+			<button><a href="/animal=2">Wolf</a></button>
 		</nav>'''
-
-		self._body = '''<h2>{self.name}</h2>
-		<p class="properties">Phylum:</p><p>
-		<p class="properties">Class:</p><p>
-		<p class="properties">Order:</p><p>
-		<p class="properties">Family:</p><p>
-		<p class="properties">Genus:</p><p>
-		<p class="properties">Average Lifespan:</p><p>
-		<p class="properties">Habitat:</p><p>
-		<p class="properties">Geolocation:</p><p>
-		<p class="properties">Sound:</p><p>
-
-		<p class="prop-info">dude</p>
-		<p class="prop-info">dude</p>
-		<p class="prop-info">dude</p>
-		<p class="prop-info">dude</p>
-		<p class="prop-info">dude</p>
-		<p class="prop-info">dude</p>
-		<p class="prop-info">dude</p>
-		<p class="prop-info">dude</p>
-		<p class="prop-info">dude</p>'''
 
 		self._footer = '''
 		</body>
@@ -72,20 +65,20 @@ class PageBase(object):
 		</footer>
 	</html>'''
 
+	@property
 	def header(self):
 		return self._header
 
+	@property
 	def nav(self):
 		return self._nav
 
-	def body(self):
-		return self._body
-
+	@property
 	def footer(self):
 		return self._footer
 
 	def update(self):
 		self._header = self._header.format(**locals())
-		self._body = self._body.format(**locals())
 
-# class 
+	
+
