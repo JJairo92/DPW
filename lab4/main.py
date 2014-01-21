@@ -82,3 +82,34 @@ class PageBase(object):
 
 	
 
+class MainInfo(PageBase):
+	def __init__(self, obj):
+		super(MainInfo, self).__init__()
+		self._body = '''
+		<h2>hello</h2>
+			<p class='properties'>Phylum:</p>
+			<p class='properties'>Class:</p>
+			<p class='properties'>Order:</p>
+			<p class='properties'>Family:</p>
+			<p class='properties'>Genus:</p>
+			<p class='properties'>Average Lifespan:</p>
+			<p class='properties'>Habitat:</p>
+			<p class='properties'>Geolocation:</p>
+			<p class='properties'>Sound:</p>
+
+			<p class='prop-info'>{obj.phylum}</p>
+			<p class='prop-info'>{obj.classs}</p>
+			<p class='prop-info'>{obj.family}</p>
+			<p class='prop-info'>{obj.genus</p>
+			<p class='prop-info'>{obj.life}</p>
+			<p class='prop-info'>{obj.habitat}</p>
+			<p class='prop-info'>{obj.geo}</p>
+			<p class='prop-info'>{obj.sound}</p>'''
+
+	@property
+	def body(self):
+		return self._body
+
+	@property
+	def update(self):
+		self._body = self._body.format(**locals())
