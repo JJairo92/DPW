@@ -141,3 +141,23 @@ class PageBase(object):
 	# def update(self):
 	# 	self._header = self._header.format(**locals())
 
+class Nav(PageBase):
+	def __init__(self):
+		super(Nav, self).__init__()
+
+		self.method = ''
+
+		self._nav = '''
+		<form action="" method="{self.method}">
+			<a href="/?animal=0" name="animal"><button>Puma</button></a>
+			<a href="/?animal=1" name="animal"><button>Bear</button></a>
+			<a href="/?animal=2" name="animal"><button>Wolf</button></a>
+		</form>'''
+
+	@property
+	def nav(self):
+		return self._nav
+	
+	def update(self):
+		self._header = self._header.format(**locals())
+		self._nav = self._nav.format(**locals())
