@@ -14,6 +14,8 @@ class MainHandler(webapp2.RequestHandler):
 
 		
 
+		animals = [puma,bear,wolf]
+
 		self.response.write(page.header)
 		self.response.write(page.nav)
 		if self.request.GET:
