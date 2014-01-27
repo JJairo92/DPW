@@ -7,9 +7,13 @@ import webapp2
 from page import *
 
 class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write('Hello world!')
+	def get(self):
+		self.response.write('Hello world!')
+		#a570c3ba-1ee0-48d1-9311-8271b2c00bab (key for API)
+		page = Page()
+
+		self.response.write(page.header + page.footer)
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+	('/', MainHandler)
 ], debug=True)
