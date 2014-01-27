@@ -11,6 +11,7 @@ class MainHandler(webapp2.RequestHandler):
 		self.response.write('Hello world!')
 		#a570c3ba-1ee0-48d1-9311-8271b2c00bab (key for API)
 		page = Page()
+		page.update()
 
 		self.response.write(page.header + page.footer)
 
