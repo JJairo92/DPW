@@ -34,6 +34,11 @@ class Form(Page):
 		self.__formOpen = '''
 		<form action="{self.action}" method="{self.method}">'''
 
+		self.__inputs = ''
+		for el in obj: # "el" for element in object(obj)
+			self.__inputs += '<input type="{el[type]}" value="{el[label]}" name="{el[name]}"></input>'
+			self.__inputs = self.__inputs.format(**locals())
+
 		self.__formClose = "</form>"
 
 		@property
