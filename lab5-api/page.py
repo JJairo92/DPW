@@ -1,4 +1,10 @@
+class ArtistView(object):
+	def __init__(self, getArtist):
+		self.__content = '<h3>' + getArtist.title + '</h3>'
 
+	@property
+	def content(self):
+		return self.__content
 
 class Page(object):
 	def __init__(self):
@@ -27,7 +33,7 @@ class Page(object):
 	
 
 class Form(Page):
-	def __init__(self):
+	def __init__(self, obj):
 		super(Form, self).__init__()
 
 		self.method = "GET"
@@ -42,10 +48,10 @@ class Form(Page):
 
 		self.__formClose = "</form>"
 
-		@property
-		def getForm(self):
-			return self.__formOpen + self.__inputs + self.__formClose
+	@property
+	def getForm(self):
+		return self.__formOpen + self.__inputs + self.__formClose
 
-		def update(self):
-			self._header = self._header.format(**locals())
-			self.__formOpen = self.__formOpen.format(**locals())
+	def update(self):
+		self._header = self._header.format(**locals())
+		self.__formOpen = self.__formOpen.format(**locals())
