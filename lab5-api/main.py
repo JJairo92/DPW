@@ -5,6 +5,8 @@
 
 import webapp2
 from page import *
+import urllib2
+from xml.dom import minidom
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
