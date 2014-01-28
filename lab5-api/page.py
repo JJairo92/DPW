@@ -1,6 +1,6 @@
 class ArtistView(object):
-	def __init__(self, getArtist):
-		self.__content = '<h3>' + getArtist.title + '</h3>'
+	def __init__(self, do):
+		
 
 	@property
 	def content(self):

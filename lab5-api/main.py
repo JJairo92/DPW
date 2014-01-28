@@ -27,12 +27,31 @@ class ArtistModel(object):
 		self.__url = "http://api.bandsintown.com/artists/"+artist+"?format=xml&app_id=artistElookup"
 		self.__req = urllib2.Request(self.__url)
 		self.__opener = urllib2.build_opener()
+		self.send()
+
+	def send(self):
 		self.__result = self.__opener.open(self.__req)
-		self.__obj = json.load(self.__result)
+		self.sort()
+
+	def sort(self):
+		self.__xmldoc = minidom.parse(self.__result)
+		self.__obj = ArtistData()
+		self.__obj.artist = self.__xmldoc.getElementsByTagName('name')[0].firstChild.nodeValue
+		eList = self.__xmldoc.getElementsByTagName('venue')
+		for e in eList:
+			eventDict = dict()
+			eventDict['venue'] = self.__xmldoc.getElementsByTagName('name')[0].firstChild.nodeValue
+			self.__obj.event.append(eventDict)
+
 
 	@property
 	def getArtist(self):
 		return self.__obj
+
+class ArtistData(object):
+	def __init__(self):
+		self.artist = ''
+		self.event = []
 
 app = webapp2.WSGIApplication([
 	('/', MainHandler)
