@@ -40,7 +40,7 @@ class ArtistModel(object):
 		eList = self.__xmldoc.getElementsByTagName('venue')
 		for e in eList:
 			eventDict = dict()
-			eventDict['venue'] = self.__xmldoc.getElementsByTagName('name')[0].firstChild.nodeValue
+			eventDict['venue'] = e.getElementsByTagName('name')[1].firstChild.nodeValue
 			self.__obj.event.append(eventDict)
 
 
