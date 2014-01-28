@@ -1,6 +1,9 @@
 class ArtistView(object):
 	def __init__(self, do):
-		
+		self.__content = '<h2>' + do.artist + '</h2>'
+		for e in do.event:
+			self.__content += '<h3>Venue:</h3>'
+			self.__content += "<br />"
 
 	@property
 	def content(self):
