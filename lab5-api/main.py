@@ -8,8 +8,6 @@ from page import *
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
-		self.response.write('Hello world!')
-		#a570c3ba-1ee0-48d1-9311-8271b2c00bab (key for API)
 		page = Page()
 		page.update()
 
