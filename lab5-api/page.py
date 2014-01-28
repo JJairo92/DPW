@@ -1,3 +1,5 @@
+
+
 class Page(object):
 	def __init__(self):
 		self.title = "Artist E.Lookup"
@@ -22,7 +24,6 @@ class Page(object):
 	@property
 	def footer(self):
 		return self.__footer
-
 	
 
 class Form(Page):
@@ -36,14 +37,14 @@ class Form(Page):
 
 		self.__inputs = ''
 		for el in obj: # "el" for element in object(obj)
-			self.__inputs += '<input type="{el[type]}" value="{el[label]}" name="{el[name]}"></input>'
+			self.__inputs += '<input type="{el[type]}" placeholder="{el[label]}" name="{el[name]}"></input>'
 			self.__inputs = self.__inputs.format(**locals())
 
 		self.__formClose = "</form>"
 
 		@property
 		def getForm(self):
-			return self.__formOpen + self.__formClose
+			return self.__formOpen + self.__inputs + self.__formClose
 
 		def update(self):
 			self._header = self._header.format(**locals())
