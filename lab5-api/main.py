@@ -30,3 +30,7 @@ class Model(object):
 		self.__opener = urllib2.build_opener()
 		self.__result = self.__opener.open(self.__req)
 		self.__obj = json.load(self.__result)
+
+	@property
+	def getArtist(self):
+		return self.__obj
