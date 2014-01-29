@@ -19,12 +19,12 @@ class MainHandler(webapp2.RequestHandler):
 
 		if self.request.GET:
 			aModel = ArtistModel(self.request.GET['artist'])
-			aView = ArtistView(aModel.getArtist)
+			aView = ArtistView(aModel.do)
 			self.response.write(aView.content)
 
 class ArtistModel(object):
 	def __init__(self, artist):
-		self.__url = "http://api.bandsintown.com/artists/"+artist+"?format=xml&app_id=artistElookup"
+		self.__url = "http://api.bandsintown.com/artists/"+artist+"/events?format=xml&app_id=artistElookup"
 		self.__req = urllib2.Request(self.__url)
 		self.__opener = urllib2.build_opener()
 		self.send()
@@ -35,23 +35,23 @@ class ArtistModel(object):
 
 	def sort(self):
 		self.__xmldoc = minidom.parse(self.__result)
-		self.__obj = ArtistData()
-		self.__obj.artist = self.__xmldoc.getElementsByTagName('name')[0].firstChild.nodeValue
-		eList = self.__xmldoc.getElementsByTagName('venue')
-		for e in eList:
-			eventDict = dict()
-			eventDict['venue'] = e.getElementsByTagName('name')[1].firstChild.nodeValue
-			self.__obj.event.append(eventDict)
+		self.__do = ArtistData()
+		self.__do.artist = self.__xmldoc.getElementsByTagName('name')[0].firstChild.nodeValue
+		events = self.__xmldoc.getElementsByTagName('venue')
+		
 
 
 	@property
-	def getArtist(self):
-		return self.__obj
+	def do(self):
+		return self.__do
 
 class ArtistData(object):
 	def __init__(self):
 		self.artist = ''
-		self.event = []
+		self.names = []
+		self.cities = []
+		self.regions = []
+		self.countries = []
 
 app = webapp2.WSGIApplication([
 	('/', MainHandler)

@@ -1,9 +1,7 @@
 class ArtistView(object):
 	def __init__(self, do):
 		self.__content = '<h2>' + do.artist + '</h2>'
-		for e in do.event:
-			self.__content += '<h3>Venue:</h3>'
-			self.__content += "<br />"
+		
 
 	@property
 	def content(self):
@@ -46,7 +44,7 @@ class Form(Page):
 
 		self.__inputs = ''
 		for el in obj: # "el" for element in object(obj)
-			self.__inputs += '<input type="{el[type]}" placeholder="{el[label]}" name="{el[name]}"></input>'
+			self.__inputs += '<input type="{el[type]}" value="{el[label]}" name="{el[name]}"></input>'
 			self.__inputs = self.__inputs.format(**locals())
 
 		self.__formClose = "</form>"
