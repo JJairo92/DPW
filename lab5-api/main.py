@@ -8,6 +8,7 @@ from page import *
 import urllib2
 from xml.dom import minidom
 
+'''This app asks the user for an artist name and it returns the upcoming show dates'''
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		# variable page is Page class in page.py
