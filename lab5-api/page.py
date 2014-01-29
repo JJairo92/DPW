@@ -1,7 +1,8 @@
 class ArtistView(object):
 	def __init__(self, do):
 		self.__content = '<h2>' + do.artist + '</h2>'
-		
+		for event in do.events:
+			self.__content += '<h3>Venue: </h3><p>'+event[0]+'</p>' + '<h3>City: </h3><p>'+event[1]+'</p>' + '<h3>Region: </h3><p>'+event[2]+'</p>' + '<h3>Country: </h3><p>'+event[3]+'</p>'
 
 	@property
 	def content(self):
