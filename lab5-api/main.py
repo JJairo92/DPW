@@ -38,7 +38,14 @@ class ArtistModel(object):
 		self.__do = ArtistData()
 		self.__do.artist = self.__xmldoc.getElementsByTagName('name')[0].firstChild.nodeValue
 		events = self.__xmldoc.getElementsByTagName('venue')
-		
+		for event in events:
+			name = event.getElementsByTagName('name')[0].firstChild.nodeValue
+			
+			city = event.getElementsByTagName('city')[0].firstChild.nodeValue
+			region = event.getElementsByTagName('region')[0].firstChild.nodeValue
+			country = event.getElementsByTagName('country')[0].firstChild.nodeValue
+
+			# print name, city, region, country
 
 
 	@property
