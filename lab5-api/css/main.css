@@ -74,12 +74,49 @@ input[type="submit"] {
 		0px 1px 0px rgba(255,255,255,0.3);
 }
 
+button {
+	float: left;
+	margin-top: 5px;
+	font-family: 'Crimson Text', serif;
+	font-size: 12pt;
+	color: #ffffff;
+	padding: 4px 15px;
+	background: -moz-linear-gradient(
+		top,
+		#6f8dad 0%,
+		#6f8dad);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#476483),
+		to(#476483));
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	border-radius: 6px;
+	border: 1px solid #ebe8eb;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px -1px 0px rgba(255,255,255,0.7);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px -1px 0px rgba(255,255,255,0.7);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px -1px 0px rgba(255,255,255,0.7);
+	text-shadow:
+		0px -1px 1px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+
+a {
+	text-decoration: none;
+}
+
 
 /* --------------- Events --------------- */
 
 .event {
-	width: 90%;
-	clear: both;
+	width: 78%;
+	clear: left;
 	margin-left: 5%;
     border: 1px solid #2a2a2a;
 }
@@ -95,4 +132,9 @@ h3 {
 	font-weight: 700;
     font-style: italic;
     color: #76a2d1;
+}
+
+.button {
+	float: right;
+	width: 20%;
 }
