@@ -40,6 +40,8 @@ class ArtistModel(object):
 		events = self.__xmldoc.getElementsByTagName('venue')
 		for event in events:
 			eventDict = dict()
+			date = self.__xmldoc.getElementsByTagName('datetime')[0].firstChild.nodeValue
+			print date
 			name = event.getElementsByTagName('name')[0].firstChild.nodeValue
 			city = event.getElementsByTagName('city')[0].firstChild.nodeValue
 			region = event.getElementsByTagName('region')[0].firstChild.nodeValue

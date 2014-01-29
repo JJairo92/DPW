@@ -21,7 +21,7 @@ class Page(object):
 		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,700italic|Rock+Salt' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<h1>Artist E. Lookup</h1>
+		<h1><img src="images/logo.png" /></h1>
 '''
 		self.__footer = '''
 	</body>
