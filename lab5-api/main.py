@@ -40,10 +40,13 @@ class ArtistModel(object):
 		events = self.__xmldoc.getElementsByTagName('venue')
 		for event in events:
 			name = event.getElementsByTagName('name')[0].firstChild.nodeValue
-			
+			self.__do.names.append(name)
 			city = event.getElementsByTagName('city')[0].firstChild.nodeValue
+			self.__do.cities.append(city)
 			region = event.getElementsByTagName('region')[0].firstChild.nodeValue
+			self.__do.regions.append(region)
 			country = event.getElementsByTagName('country')[0].firstChild.nodeValue
+			self.__do.countries.append(country)
 
 			# print name, city, region, country
 
