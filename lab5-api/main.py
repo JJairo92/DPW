@@ -39,14 +39,14 @@ class ArtistModel(object):
 		self.__do.artist = self.__xmldoc.getElementsByTagName('name')[0].firstChild.nodeValue
 		events = self.__xmldoc.getElementsByTagName('venue')
 		for event in events:
+			eventDict = dict()
 			name = event.getElementsByTagName('name')[0].firstChild.nodeValue
-			self.__do.names.append(name)
 			city = event.getElementsByTagName('city')[0].firstChild.nodeValue
-			self.__do.cities.append(city)
 			region = event.getElementsByTagName('region')[0].firstChild.nodeValue
-			self.__do.regions.append(region)
 			country = event.getElementsByTagName('country')[0].firstChild.nodeValue
-			self.__do.countries.append(country)
+
+			eventDict = [name, city, region, country]
+			self.__do.events.append(eventDict)
 
 			# print name, city, region, country
 
@@ -58,10 +58,7 @@ class ArtistModel(object):
 class ArtistData(object):
 	def __init__(self):
 		self.artist = ''
-		self.names = []
-		self.cities = []
-		self.regions = []
-		self.countries = []
+		self.events = []
 
 app = webapp2.WSGIApplication([
 	('/', MainHandler)
