@@ -1,4 +1,58 @@
+/* 
+	Jairo Jurado
+	DPW
+	API Project
+*/
+
 /* --------------- Main --------------- */
 body {
-	background-color: #eee;
+	background-color: #fafafa;
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+	font-family: 'Rock Salt', cursive;
+	text-align: center;
+	color: #476483;
+}
+
+h2 {
+	font-family: 'Crimson Text', serif;
+    font-weight: 700;
+    font-style: oblique;
+    text-decoration: line-through;
+	margin-left: 3%;
+	color: #476483;
+	font-size: 24pt;
+}
+
+p {
+	margin-left: 2%;
+}
+
+#search-box {
+	text-align: center;
+}
+
+
+/* --------------- Events --------------- */
+
+.event {
+	width: 90%;
+	clear: both;
+	margin-left: 3%;
+}
+
+.venues, .cities, .regions, .countries {
+	float: left;
+	width: 25%;
+}
+
+h3 {
+	margin: 2% 2%;
+	font-family: 'Crimson Text', serif;
+	font-weight: 700;
+    font-style: italic;
 }
