@@ -20,6 +20,7 @@ class MainHandler(webapp2.RequestHandler):
 		#writes all the information to the screen
 		self.response.write(form.header + form.getForm + form.footer)
 
+		#I did not know how to accept spaces in text field; however, if %20 is written instead of a space, it works; so only artist's names with one word work, unless %20 is written instead of spaces
 		# looks for user's input (the artist the user types)
 		if self.request.GET:
 			#assigns user's input as ArtistModel parameter
@@ -73,19 +74,19 @@ class ArtistModel(object):
 			self.__do.events.append(eventDict)
 
 		# variable to hold XML "event" tag info
-		datesLinks = self.__xmldoc.getElementsByTagName('event')
-		# loops through each "event" tag
-		for el in datesLinks:
-			datesLinksDict = dict() # dictionary to hold 2 variables "date, link"
+		# datesLinks = self.__xmldoc.getElementsByTagName('event')
+		# # loops through each "event" tag
+		# for el in datesLinks:
+		# 	datesLinksDict = dict() # dictionary to hold 2 variables "date, link"
 
-			# assigns each tag variables
-			date = el.getElementsByTagName('datetime')[0].firstChild.nodeValue
-			link = el.getElementsByTagName('ticket_url')[0].firstChild.nodeValue
+		# 	# assigns each tag variables
+		# 	date = el.getElementsByTagName('datetime')[0].firstChild.nodeValue
+		# 	link = el.getElementsByTagName('ticket_url')[0].firstChild.nodeValue
 
-			# dictionary to hold each variable created
-			datesLinksDict = [date, link]
-			# adds dictionary to datesLinks array in ArtistData class
-			self.__do.datesLinks.append(datesLinksDict)
+		# 	# dictionary to hold each variable created
+		# 	datesLinksDict = [date, link]
+		# 	# adds dictionary to datesLinks array in ArtistData class
+		# 	self.__do.events.append(datesLinksDict)
 
 	@property
 	def do(self):
@@ -96,7 +97,7 @@ class ArtistData(object):
 	def __init__(self):
 		self.artist = ''
 		self.events = []
-		self.datesLinks = []
+		# self.datesLinks = []
 
 app = webapp2.WSGIApplication([
 	('/', MainHandler)

@@ -6,8 +6,8 @@ class ArtistView(object):
 		# Each information that was looped through
 		for event in do.events:
 			self.__content += '<div class="event"><div class="venues"><h3>Venue</h3><p>'+event[0]+'</p></div>' + '<div class="cities"><h3>City</h3><p>'+event[1]+'</p></div>' + '<div class="regions"><h3>State/Region</h3><p>'+event[2]+'</p></div>' + '<div class="countries"><h3>Country</h3><p>'+event[3]+'</p></div></div>'
-		for dateLink in do.datesLinks:
-			self.__content += '<div class="button"><h3>Date</h3><p>'+dateLink[0]+'</p>' + '<h3><Link</h3><a href="'+dateLink[1]+'" target="_blank"><button>Find Tickets!</button></a></div>'
+		# for dateLink in do.datesLinks:
+		# 	self.__content += '<div id="buttons"><div class="button"><h3>Date</h3><p>'+dateLink[0]+'</p>' + '<h3><Link</h3><a href="'+dateLink[1]+'" target="_blank"><button>Find Tickets!</button></a></div></div>'
 
 	@property
 	def content(self):
