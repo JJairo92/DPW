@@ -20,6 +20,10 @@ class MusicModel(object):
 		self.__opener = urllib2.build_opener()
 		self.send()
 
+	def send(self):
+		self.__result = self.__opener.open(self.__req)
+		self.sort()
+
 	
 
 
