@@ -1,7 +1,13 @@
 class MusicView(object):
 	def __init__(self, do):
+		self.__content = ''
 		for song in do.songs:
-			self.__content = '<h3>' +song[0]+ '</h3>'
+			self.__content += '<h3>Track Title: </h3><p>' +song[0]+ '</p>'
+			self.__content += '<h3>Track Artist: </h3><p>' +song[1]+ '</p>'
+			self.__content += '<h3>Track Length: </h3><p>' +song[2]+ '</p>'
+			self.__content += '<h3>Track Year: </h3><p>' +song[3]+ '</p>'
+			self.__content += '<h3>Track Label: </h3><p>' +song[4]+ '</p>'
+			self.__content += '<h3>Track Cover: </h3><img src="'+song[5]+'" />'
 
 	@property
 	def content(self):
@@ -30,7 +36,8 @@ class Page(object):
 					<li>Smells Like Teen Spirit</li>
 					<audio src="mp3s/smells-like-teen-spirit.mp3" controls="controls"></audio>
 					<li>What's Going On</li>
-					<audio src="mp3s/WhatsGoingOn.mp3" controls="controls"></audio></ul>'''
+					<audio src="mp3s/WhatsGoingOn.mp3" controls="controls"></audio>
+				</ul>'''
 
 		self.__footer = '''
 			</body>
@@ -59,7 +66,7 @@ class Form(Page):
 		<form action="{self.action}" method="{self.method}">'''
 		self.__links = ''
 		for el in obj:
-			self.__links += '<button>{el[song]}</button>'
+			self.__links += '<button name="{el[name]}">{el[song]}</button>'
 			self.__links = self.__links.format(**locals())
 
 		self.__formClose = '</form>'
