@@ -11,6 +11,7 @@ from xml.dom import minidom
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		page = Page()
+		page.update()
 		self.response.write(page.header + page.footer)
 
 class MusicModel(object):

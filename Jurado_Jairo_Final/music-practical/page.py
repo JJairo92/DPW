@@ -26,4 +26,5 @@ class Page(object):
 	def footer(self):
 		return self.__footer
 
-	
+	def update(self):
+		self._header = self._header.format(**locals())
