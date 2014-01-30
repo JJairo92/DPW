@@ -24,7 +24,8 @@ class MusicModel(object):
 		self.__result = self.__opener.open(self.__req)
 		self.sort()
 
-	
+	def sort(self):
+		self.__xmldoc = minidom.parse(self.__result)
 
 
 # class TrackData(object)
