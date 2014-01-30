@@ -27,9 +27,16 @@ class MusicModel(object):
 
 	def sort(self):
 		self.__xmldoc = minidom.parse(self.__result)
+		
 
 
-# class TrackData(object)
+class TrackData(object):
+	def __init__(self):
+		self.name = ''
+		self.artist = ''
+		self.length = ''
+		self.year = ''
+		self.label = ''
 
 app = webapp2.WSGIApplication([
 	('/', MainHandler)
