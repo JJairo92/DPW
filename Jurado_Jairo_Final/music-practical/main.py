@@ -10,7 +10,8 @@ from xml.dom import minidom
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+    	page = Page()
+        self.response.write(page.header + page.footer)
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)

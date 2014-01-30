@@ -21,3 +21,7 @@ class Page(object):
 	@property
 	def header(self):
 		return self._header
+
+	@property
+	def footer(self):
+		return self.__footer

@@ -6,7 +6,7 @@ threadsafe: yes
 
 handlers:
 - url: /covers
-  static_dr: covers
+  static_dir: covers
 
 - url: /favicon\.ico
   static_files: favicon.ico
