@@ -5,8 +5,14 @@ api_version: 1
 threadsafe: yes
 
 handlers:
+- url: /mp3s
+  static_dir: mp3s
+
 - url: /covers
   static_dir: covers
+
+- url: /css
+  static_dir: css
 
 - url: /favicon\.ico
   static_files: favicon.ico
