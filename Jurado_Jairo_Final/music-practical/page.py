@@ -25,3 +25,5 @@ class Page(object):
 	@property
 	def footer(self):
 		return self.__footer
+
+	

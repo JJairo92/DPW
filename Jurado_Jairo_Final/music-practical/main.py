@@ -9,10 +9,22 @@ import urllib2
 from xml.dom import minidom
 
 class MainHandler(webapp2.RequestHandler):
-    def get(self):
-    	page = Page()
-        self.response.write(page.header + page.footer)
+	def get(self):
+		page = Page()
+		self.response.write(page.header + page.footer)
+
+class MusicModel(object):
+	def __init__(self):
+		self.__url = "Music.xml"
+		self.__req = urllib2.Request(self.__url)
+		self.__opener = urllib2.build_opener()
+		self.send()
+
+	
+
+
+# class TrackData(object)
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+	('/', MainHandler)
 ], debug=True)
