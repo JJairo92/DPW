@@ -3,6 +3,10 @@
 # DPW
 # Lab 1 - Madlib
 
+# User's Name
+name = raw_input("Enter your full name: ")
+print name
+
 # Madlib
 madlib = '''Test madlib'''
 
