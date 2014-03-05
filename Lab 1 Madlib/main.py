@@ -3,3 +3,8 @@
 # DPW
 # Lab 1 - Madlib
 
+# Madlib
+madlib = '''Test madlib'''
+
+madlib = madlib.format(**locals())
+print madlib
