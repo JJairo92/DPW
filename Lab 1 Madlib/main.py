@@ -37,17 +37,24 @@ else:
 	pop_bool = False
 
 def calc_future_sales(sales, pop_bool):
-	hispanic_states = 5
-	usual_sales = 10000
+	hispanic_states = 5 # states in the US that purchase the most latin/hispanic albums
+
+	usual_sales = 0
+	for i in range(0,hispanic_states):
+		usual_sales += 10000
+
+	print usual_sales # usual album sales in each state
 
 	if pop_bool == True:
 		pop_bonus = 20000
 	else:
 		pop_bonus = 0
 
-	estimated_sales = sales + (usual_sales * 5) + pop_bonus
+	estimated_sales = sales + usual_sales + pop_bonus
 	return estimated_sales
 est_sales = calc_future_sales(sales, pop_bool)
+
+# 
 
 # Dictionary to hold numbers
 numbers = dict()
@@ -56,7 +63,7 @@ print numbers
 print strings
 
 # Madlib
-madlib = '''I met an interesting person last night. {strings[1]} likes to be called {strings[0]} on stage. {strings[1]} is a singer and very well known in the hispanic community. We would like to get him to join our record company so he can reach the American community. We estimate '''
+madlib = '''I met an interesting person last night. {strings[1]} likes to be called {strings[0]} on stage. {strings[1]} is a singer, {numbers[age]} years old, and very well known in the hispanic community. We would like to get the artist to join our record company so the artist can reach the American community. We estimate the artist's future sales with us to be {numbers[future_sales]}, based on the artist's current sales ({numbers[curr_sales]}) and the artist's popularity.'''
 
 madlib = madlib.format(**locals())
 print madlib
