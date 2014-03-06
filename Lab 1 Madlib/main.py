@@ -3,6 +3,10 @@
 # DPW
 # Lab 1 - Madlib
 
+'''
+This 'madlib' is a proposal to a record company to consider an artist to join their company. The company is called Insane Records. The artist is almost done with his/her contract with another record company.
+'''
+
 # Array to hold strings
 strings = []
 
@@ -27,8 +31,12 @@ def calc_age(yc, yb):
 	return age
 a = calc_age(year_curr, year_born)
 
+# Album price; songs per album
+price = input("Enter individual album price (include cents): ") # this will be the float
+songs = input("Enter the amount of songs per album recorded: ")
+
 # Sales Estimate function
-sales = input("Enter current album sales for artist: ")
+sales = input("Enter current album sales for artist in other record company: ")
 popularity = raw_input("Does this person pass our popularity standards? (y/n) ")
 
 if popularity == 'y' or popularity == 'Y':
@@ -55,21 +63,25 @@ def calc_future_sales(sales, pop_bool):
 	return estimated_sales
 est_sales = calc_future_sales(sales, pop_bool)
 
-# Conditional for legal drinker
+# Conditional to determine the artist's drinker_status
 if a >= 21:
 	drinker_status = 'drinker'
 else:
-	drinker_status = 'non-drinker'
+	drinker_status = 'non-drinker' # considered 'non-drinker' if younger than 21
 strings.append(drinker_status)
 
 # Dictionary to hold numbers
 numbers = dict()
-numbers = dict(age=a,future_sales=est_sales,curr_sales=sales)
-print numbers
-print strings
+numbers = dict(age=a,future_sales=est_sales,curr_sales=sales,album_price=price,songs_amount=songs)
 
 # Madlib
-madlib = '''I met an interesting person last night. {strings[1]} likes to be called {strings[0]} on stage. {strings[1]} is a singer, {numbers[age]} years old, and very well known in the hispanic community. Due to our policy, the artist's 'drinker status' is {strings[2]}. We would like to get the artist to join our record company so the artist can reach the American community. We estimate the artist's future sales with us to be {numbers[future_sales]}, based on the artist's current sales ({numbers[curr_sales]}) and the artist's popularity.'''
+madlib = '''New Artist Proposal:
+
+Dear Insane Records,
+
+I met an interesting person last night. {strings[1]} likes to be called {strings[0]} on stage. {strings[1]} is a singer, {numbers[age]} years old, and very well known in the hispanic community. Due to our policy, the artist's 'drinker status' is {strings[2]}. We would like to get the artist to join our record company so the artist can reach the American community. The artist asks for an album's individual price to be {numbers[album_price]}. {strings[1]} is willing to add to the contract an average of {numbers[songs_amount]} songs per album recorded. We estimate the artist's future sales with us to be {numbers[future_sales]}, based on the artist's current sales ({numbers[curr_sales]}) and the artist's popularity.
+
+We hope you take this proposal into consideration.'''
 
 madlib = madlib.format(**locals())
 print madlib
