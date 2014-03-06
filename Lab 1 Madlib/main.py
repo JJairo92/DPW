@@ -8,7 +8,7 @@ strings = []
 
 # User's Name
 name = raw_input("Enter person's full name: ") # "raw_input" is for strings
-
+strings.append(name)
 
 # Gender; Pronoun function
 gender = raw_input("Enter person's gender: ")
@@ -16,7 +16,7 @@ if gender == "male" or gender == "Male":
 	gender_pronoun = "He"
 else:
 	gender_pronoun = "She"
-
+strings.append(gender_pronoun)
 
 
 # Calculate age input variable and function
