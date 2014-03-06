@@ -5,33 +5,35 @@
 
 # Array to hold strings
 strings = []
+numbers = dict()
 
 # User's Name
-name = raw_input("Enter your full name: ") # "raw_input" is for strings
+name = raw_input("Enter person's full name: ") # "raw_input" is for strings
+
+# Gender; Pronoun function
+gender = raw_input("Enter person's gender: ")
+if gender == "male" or gender == "Male":
+	gender_pronoun = "He"
+else:
+	gender_pronoun = "She"
 
 # Calculate age input variable and function
 year_curr = 2014
-year_born = input("In what year where you born? ") # "input" accepts integers
+year_born = input("Enter the year the person was born: ") # "input" accepts integers
 
 def calc_age(yc, yb):
 	a = yc - yb
 	return a
 age = calc_age(year_curr, year_born)
-strings.append(age)
 
 # Conditional to check legal drinking age
-legal_drinker = False # "True" if legal drinker; the conditional will determine it
 if age >= 21:
 	legal_drinker = True
 else:
 	legal_drinker = False
 
-# Calculate
-
-print age
-
 # Madlib
-madlib = '''I met'''
+madlib = '''I met an interesting person last night. '''
 
 madlib = madlib.format(**locals())
 print madlib
