@@ -11,6 +11,11 @@ class Page():
 		<body>
 			<h1>Gamer Addictive Newsletter Sign-Up</h1>'''
 
+		self._form = '''<form method="GET">
+			
+		</form>
+		'''
+
 		self.footer = '''
 		</body>
 
