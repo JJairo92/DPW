@@ -14,13 +14,14 @@ h1 {
 	font-weight: 600;
 }
 
-form {
+form, #results {
 	border: 2px solid #3fb1e3;
 	width: 600px;
 	margin: 0 auto;
 	background-color: #2f2f2f;
 	border-radius: 10px;
 	padding: 1% 0;
+	overflow: hidden;
 }
 
 body {
@@ -59,4 +60,23 @@ select {
 
 #option {
 	margin-left: 30%;
+}
+
+/* --------------- Results --------------- */
+.labels {
+	float: left;
+	clear: left;
+	width: 270px;
+	text-align: right;
+	margin-right: 12%;
+	margin-bottom: 2%;
+}
+
+.inputs {
+	margin: 5% 0 3% 0;
+	width: 250px;
+	overflow: hidden;
+	text-align: left;
+	font-weight: 400;
+	font-style: italic;
 }
