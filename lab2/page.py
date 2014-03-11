@@ -20,6 +20,13 @@ class Page():
 			<input class="input" type="text" name="first-name" id="first-name" autofocus="autofocus" placeholder="John" />
 			<input class="input" type="text" name="last-name" id="last-name" placeholder="Smith" />
 			<input class="input" type="email" placeholder="johnsmith@email.com" name="email" id="email" /><br />
+
+			<select class="input" name="system" id="system">
+				<option>Console</option>
+				<option>PC</option>
+				<option>Mobile</option>
+				<option>Everything</option>
+			</select><br />
 		</form>
 		'''
 
