@@ -16,6 +16,10 @@ class Page():
 			<label for="last-name">Last Name:</label>
 			<label for="email">Email Address: </label>
 			<label for="system">Information in Newsletter?</label>
+
+			<input class="input" type="text" name="first-name" id="first-name" autofocus="autofocus" placeholder="John" />
+			<input class="input" type="text" name="last-name" id="last-name" placeholder="Smith" />
+			<input class="input" type="email" placeholder="johnsmith@email.com" name="email" id="email" /><br />
 		</form>
 		'''
 
