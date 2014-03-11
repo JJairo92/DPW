@@ -12,7 +12,10 @@ class Page():
 			<h1>Gamer Addictive Newsletter Sign-Up</h1>'''
 
 		self._form = '''<form method="GET">
-			
+			<label for="first-name">First Name:</label>
+			<label for="last-name">Last Name:</label>
+			<label for="email">Email Address: </label>
+			<label for="system">Information in Newsletter?</label>
 		</form>
 		'''
 
