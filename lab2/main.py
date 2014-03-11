@@ -10,6 +10,7 @@ class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		page = Page()
 
+		# if the submit button is pressed, the results or filled out information will appear on screen
 		if self.request.GET:
 			first_name = self.request.GET['first-name']
 			last_name = self.request.GET['last-name']
@@ -33,7 +34,8 @@ class MainHandler(webapp2.RequestHandler):
 			result = result.format(**locals())
 
 			self.response.write(page.header + result + page.footer)
-		else:
+			
+		else: # if the submit button is not pressed, the form will be displayed
 			self.response.write(page.header + page.form + page.footer)
 
 app = webapp2.WSGIApplication([
