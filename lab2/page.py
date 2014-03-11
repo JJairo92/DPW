@@ -11,5 +11,16 @@ class Page():
 		<body>
 			<h1>Gamer Addictive Newsletter Sign-Up</h1>'''
 
+		self.footer = '''
+		</body>
+
+		<footer>
+			<p>Copyright &copy; 2014 <strong>Gamer Addictive</strong></p>
+		</footer>
+	</html>'''
+
 	def header(self):
 		return self.header
+
+	def footer(self):
+		return self.footer
