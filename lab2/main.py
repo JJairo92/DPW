@@ -10,7 +10,7 @@ class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		page = Page()
 
-		self.response.write(page.header + page.footer)
+		self.response.write(page.header + page.form + page.footer)
 
 app = webapp2.WSGIApplication([
 	('/', MainHandler)

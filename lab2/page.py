@@ -11,7 +11,7 @@ class Page():
 		<body>
 			<h1>Gamer Addictive Newsletter Sign-Up</h1>'''
 
-		self._form = '''<form method="GET">
+		self.form = '''<form method="GET">
 			<label for="first-name">First Name:</label>
 			<label for="last-name">Last Name:</label>
 			<label for="email">Email Address: </label>
@@ -46,6 +46,9 @@ class Page():
 
 	def header(self):
 		return self.header
+
+	def form(self):
+		return self.form
 
 	def footer(self):
 		return self.footer
