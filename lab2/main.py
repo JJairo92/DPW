@@ -4,10 +4,11 @@
 # Lab 2 - Simple Form
 
 import webapp2
+from page import Page
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        page = Page()
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
