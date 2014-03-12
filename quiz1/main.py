@@ -8,8 +8,14 @@ class MainClass(object):
 	width = 5
 	height = 5
 
+	# Conditional to determine shape
 	if width == height:
 		shape = "square"
 	else:
 		shape = "rectangle"
-	print shape
+
+	# calcArea function
+	def calcArea(w,h):
+		a = w * h
+		return a
+	area = calcArea(width,height)
