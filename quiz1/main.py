@@ -5,4 +5,11 @@
 
 # Class to hold the functions
 class MainClass(object):
-	print "haha"
+	width = 5
+	height = 5
+
+	if width == height:
+		shape = "square"
+	else:
+		shape = "rectangle"
+	print shape
