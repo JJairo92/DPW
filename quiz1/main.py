@@ -19,3 +19,5 @@ class MainClass(object):
 		a = w * h
 		return a
 	area = calcArea(width,height)
+
+	print "The area of your " +shape+ " is " +str(area)+ " square feet."
