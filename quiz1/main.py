@@ -20,4 +20,14 @@ class MainClass(object):
 		return a
 	area = calcArea(width,height)
 
+	# Result in a Sentence
 	print "The area of your " +shape+ " is " +str(area)+ " square feet."
+
+	# Loop Function
+	bottles = 99
+	def countDown(bottles):
+		beer = 99
+		for bottles in range(100,0,-1):
+			print str(bottles)+" Bottles of Beer on the Wall, "+str(bottles)+" Bottles of Beer.. take one down and pass it around. Now you have "+str(beer)+" bottles of beer on the wall!"
+			beer -= 1
+	countDown(bottles)
