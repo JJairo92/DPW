@@ -61,6 +61,11 @@ class Game(object):
 		self.pc_sales = 0
 		self.ps4_sales = 0
 		self.xboxone_sales = 0
+		self.total_sales = 0
+
+	def calc_total_sales(self):
+		total = self.ps3_sales + self.xbox360_sales + self.pc_sales + self.ps4_sales + self.xboxone_sales
+		self.total_sales = total
 
 app = webapp2.WSGIApplication([
 	('/', MainHandler)
