@@ -34,6 +34,15 @@ class MainHandler(webapp2.RequestHandler):
 		self.ghosts.ps4_sales = 1939980
 		self.ghosts.xboxone_sales = 1566985
 
+		# FIFA 14
+		self.fifa = Game()
+		self.fifa.title = "FIFA Soccer 14"
+		self.fifa.ps3_sales = 5488401
+		self.fifa.xbox360_sales = 3747307
+		self.fifa.pc_sales = 244355
+		self.fifa.ps4_sales = 1627931
+		self.fifa.xboxone_sales = 779108
+
 # Data-Object Class
 class Game(object):
 	def __init__(self):
