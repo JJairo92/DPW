@@ -6,9 +6,13 @@
 import webapp2
 
 class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write('Hello world!')
+	def get(self):
+		self.response.write('Hello world!')
+
+class Game(object):
+	def __init__(self):
+		pass
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+	('/', MainHandler)
 ], debug=True)
