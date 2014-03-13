@@ -11,7 +11,11 @@ class MainHandler(webapp2.RequestHandler):
 
 class Game(object):
 	def __init__(self):
-		pass
+		self.ps3_sales = 0
+		self.xbox360_sales = 0
+		self.pc_sales = 0
+		self.ps4_sales = 0
+		self.xboxone_sales = 0
 
 app = webapp2.WSGIApplication([
 	('/', MainHandler)
