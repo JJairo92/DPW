@@ -15,6 +15,8 @@ class MainHandler(webapp2.RequestHandler):
 		self.tomb.pc_sales = 248657
 		self.tomb.ps4_sales = 293112
 		self.tomb.xboxone_sales = 99107
+		self.tomb.calc_total_sales()
+		print "The total number of sales for " +self.tomb.title+ " is " +str(self.tomb.total_sales)
 
 		# Assassin's Creed IV
 		self.acreed = Game()
@@ -24,6 +26,8 @@ class MainHandler(webapp2.RequestHandler):
 		self.acreed.pc_sales = 393637
 		self.acreed.ps4_sales = 1434353
 		self.acreed.xboxone_sales = 692308
+		self.acreed.calc_total_sales()
+		print "The total number of sales for " +self.acreed.title+ " is " +str(self.acreed.total_sales)
 
 		# CoD: Ghosts
 		self.ghosts = Game()
@@ -33,6 +37,8 @@ class MainHandler(webapp2.RequestHandler):
 		self.ghosts.pc_sales = 502961
 		self.ghosts.ps4_sales = 1939980
 		self.ghosts.xboxone_sales = 1566985
+		self.ghosts.calc_total_sales()
+		print "The total number of sales for " +self.ghosts.title+ " is " +str(self.ghosts.total_sales)
 
 		# FIFA 14
 		self.fifa = Game()
@@ -42,6 +48,8 @@ class MainHandler(webapp2.RequestHandler):
 		self.fifa.pc_sales = 244355
 		self.fifa.ps4_sales = 1627931
 		self.fifa.xboxone_sales = 779108
+		self.fifa.calc_total_sales()
+		print "The total number of sales for " +self.fifa.title+ " is " +str(self.fifa.total_sales)
 
 		# Just Dance 2014
 		self.jdance = Game()
@@ -51,6 +59,8 @@ class MainHandler(webapp2.RequestHandler):
 		self.jdance.pc_sales = 0 # game is not available for pc
 		self.jdance.ps4_sales = 154497
 		self.jdance.xboxone_sales = 196479
+		self.jdance.calc_total_sales()
+		print "The total number of sales for " +self.jdance.title+ " is " +str(self.jdance.total_sales)
 
 # Data-Object Class
 class Game(object):
