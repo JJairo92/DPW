@@ -81,18 +81,27 @@ class MainHandler(webapp2.RequestHandler):
 			total_sales = games[game].total_sales
 
 			info='''<div id="info">
-			<h2>{title}</h2>
-				<ul>
-					<li>PS3 Sales: {ps3_sales}</li>
-					<li>XBOX 360 Sales: {xbox360_sales}</li>
-					<li>PC Sales: {pc_sales}</li>
-					<li>PS4 Sales: {ps4_sales}</li>
-					<li>XBOX One Sales: {xboxone_sales}</li>
-					<li>Total Sales: {total_sales}</li>
-				</ul>
+			<h3>{title}</h3>
+				<section id="sales">
+					<p class="labels"><strong>PS3 Sales:</strong></p>
+					<p class="labels"><strong>XBOX 360 Sales:</strong></p>
+					<p class="labels"><strong>PC Sales:</strong></p>
+					<p class="labels"><strong>PS4 Sales:</strong></p>
+					<p class="labels"><strong>XBOX One Sales:</strong></p>
+					<p class="labels"><strong>Total Sales:</strong></p>
+				</section>
+
+				<section id="numbers">
+					<p class="stats">{ps3_sales}</p>
+					<p class="stats">{xbox360_sales}</p>
+					<p class="stats">{pc_sales}</p>
+					<p class="stats">{ps4_sales}</p>
+					<p class="stats">{xboxone_sales}</p>
+					<p class="stats">{total_sales}</p>
+				</section>
 			</div>'''
 			info = info.format(**locals())
-			
+
 			self.response.write(info)
 		self.response.write(page.footer)
 
