@@ -43,6 +43,15 @@ class MainHandler(webapp2.RequestHandler):
 		self.fifa.ps4_sales = 1627931
 		self.fifa.xboxone_sales = 779108
 
+		# Just Dance 2014
+		self.jdance = Game()
+		self.jdance.title = "Just Dance 2014"
+		self.jdance.ps3_sales = 248065
+		self.jdance.xbox360_sales = 749050
+		self.jdance.pc_sales = 0 # game is not available for pc
+		self.jdance.ps4_sales = 154497
+		self.jdance.xboxone_sales = 196479
+
 # Data-Object Class
 class Game(object):
 	def __init__(self):
