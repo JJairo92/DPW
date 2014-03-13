@@ -25,6 +25,15 @@ class MainHandler(webapp2.RequestHandler):
 		self.acreed.ps4_sales = 1434353
 		self.acreed.xboxone_sales = 692308
 
+		# CoD: Ghosts
+		self.ghosts = Game()
+		self.ghosts.title = "Call of Duty: Ghosts"
+		self.ghosts.ps3_sales = 7539073
+		self.ghosts.xbox360_sales = 8282936
+		self.ghosts.pc_sales = 502961
+		self.ghosts.ps4_sales = 1939980
+		self.ghosts.xboxone_sales = 1566985
+
 # Data-Object Class
 class Game(object):
 	def __init__(self):
