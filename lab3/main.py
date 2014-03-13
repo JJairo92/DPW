@@ -4,9 +4,12 @@
 # Lab 3 - Encapsulated Calculator
 
 import webapp2
+from page import Page
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
+		page = Page()
+
 		# Tomb Raider (2013)
 		self.tomb = Game()
 		self.tomb.title = "Tomb Raider (2013)"
@@ -61,6 +64,38 @@ class MainHandler(webapp2.RequestHandler):
 		self.jdance.xboxone_sales = 196479
 		self.jdance.calc_total_sales()
 		print "The total number of sales for " +self.jdance.title+ " is " +str(self.jdance.total_sales)
+
+		games = [self.tomb, self.acreed, self.ghosts, self.fifa, self.jdance]
+		print games
+
+		self.response.write(page.header + page.links)
+		if self.request.GET:
+			game = int(self.request.GET['game'])
+
+			title = games[game].title
+			ps3_sales = games[game].ps3_sales
+			xbox360_sales = games[game].xbox360_sales
+			pc_sales = games[game].pc_sales
+			ps4_sales = games[game].ps4_sales
+			xboxone_sales = games[game].xboxone_sales
+			total_sales = games[game].total_sales
+
+			info='''<div id="info">
+			<h2>{title}</h2>
+				<ul>
+					<li>PS3 Sales: {ps3_sales}</li>
+					<li>XBOX 360 Sales: {xbox360_sales}</li>
+					<li>PC Sales: {pc_sales}</li>
+					<li>PS4 Sales: {ps4_sales}</li>
+					<li>XBOX One Sales: {xboxone_sales}</li>
+					<li>Total Sales: {total_sales}</li>
+				</ul>
+			</div>'''
+			info = info.format(**locals())
+			
+			self.response.write(info)
+		self.response.write(page.footer)
+
 
 # Data-Object Class
 class Game(object):
