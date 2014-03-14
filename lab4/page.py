@@ -23,3 +23,12 @@ class Page(object):
 		</footer>
 		</div> <!-- Closes "container" div -->
 	</html>'''
+
+	def header(self):
+		return self.header
+
+	def links(self):
+		return self.links
+
+	def footer(self):
+		return self.footer
