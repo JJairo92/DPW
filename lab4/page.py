@@ -14,3 +14,12 @@ class Page(object):
 		<a href="?animal=1" class="links">Bear</a>
 		<a href="?animal=2" class="links">Wolf</a>
 		'''
+
+		self.footer = '''
+		</body>
+
+		<footer>
+			<p>Copyright &copy; 2014 <strong>Animals</strong>.</p>
+		</footer>
+		</div> <!-- Closes "container" div -->
+	</html>'''
