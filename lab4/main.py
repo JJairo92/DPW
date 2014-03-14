@@ -4,9 +4,12 @@
 # Lab 4 - Animals
 
 import webapp2
+from page import Page
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
+		page = Page()
+		
 		# Puma
 		puma = Animal()
 		puma.name = "Puma"
