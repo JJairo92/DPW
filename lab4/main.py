@@ -23,6 +23,10 @@ class Animal(object):
 		self.geolocation = ''
 		self.sound = ''
 
+	@sound.setter
+	def sound(self, new_sound):
+		self.sound = new_sound
+
 app = webapp2.WSGIApplication([
 	('/', MainHandler)
 ], debug=True)
