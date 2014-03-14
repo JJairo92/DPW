@@ -19,7 +19,7 @@ class Page(object):
 		</body>
 
 		<footer>
-			<p>Copyright &copy; 2014 <strong>Animals</strong>.</p>
+			<p>Copyright &copy; 2014 <strong>Animals.</strong></p>
 		</footer>
 		</div> <!-- Closes "container" div -->
 	</html>'''

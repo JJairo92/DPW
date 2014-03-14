@@ -9,7 +9,7 @@ from page import Page
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		page = Page()
-		
+
 		# Puma
 		puma = Animal()
 		puma.name = "Puma"
@@ -48,6 +48,10 @@ class MainHandler(webapp2.RequestHandler):
 		wolf.habitat = "Grass Plains and Woodlands"
 		wolf.geolocation = "North America, Eurasia, and North Africa"
 		wolf.sound = "aaooo"
+
+		self.response.write(page.header + page.links)
+
+		self.response.write(page.footer)
 
 class Animal(object):
 	def __init__(self):
