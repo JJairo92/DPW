@@ -14,19 +14,8 @@ class MainHandler(webapp2.RequestHandler):
 		puma = Puma()
 		puma.sound = "haaoom"
 
-		print puma.name
-
 		# Bear
-		bear = Animal()
-		bear.name = "Bear"
-		bear.phylum = "Chordata"
-		bear.classs = "Mammalia"
-		bear.order = "Carnivora"
-		bear.family = "Ursidae"
-		bear.genus = "Ursus"
-		bear.lifespan = "15 to 35 years"
-		bear.habitat = "Forest and Mountainous Regions"
-		bear.geolocation = "North America, South America, Europe, and Asia"
+		bear = Bear()
 		bear.sound = "uuaaah"
 
 		# Wolf
@@ -81,6 +70,19 @@ class Puma(Animal):
 		self.lifespan = "10 to 15 years"
 		self.habitat = "Mountain Forest and Jungle"
 		self.geolocation = "North and South America"
+
+class Bear(Animal):
+	def __init__(self):
+		super(Animal, self).__init__() # instantiating function for super class
+		self.name = "Bear"
+		self.phylum = "Chordata"
+		self.classs = "Mammalia"
+		self.order = "Carnivora"
+		self.family = "Ursidae"
+		self.genus = "Ursus"
+		self.lifespan = "15 to 35 years"
+		self.habitat = "Forest and Mountainous Regions"
+		self.geolocation = "North America, South America, Europe, and Asia"
 
 
 app = webapp2.WSGIApplication([
