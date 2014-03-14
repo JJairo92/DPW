@@ -19,16 +19,7 @@ class MainHandler(webapp2.RequestHandler):
 		bear.sound = "uuaaah"
 
 		# Wolf
-		wolf = Animal()
-		wolf.name = "Wolf"
-		wolf.phylum = "Chordata"
-		wolf.classs = "Mammalia"
-		wolf.order = "Carnivora"
-		wolf.family = "Canidae"
-		wolf.genus = "Canis"
-		wolf.lifespan = "10 to 12 years"
-		wolf.habitat = "Grass Plains and Woodlands"
-		wolf.geolocation = "North America, Eurasia, and North Africa"
+		wolf = Wolf()
 		wolf.sound = "aaooo"
 
 		self.response.write(page.header + page.links)
@@ -67,6 +58,7 @@ class Puma(Animal):
 		self.order = "Carnivora"
 		self.family = "Felidae"
 		self.genus = "Puma"
+		self.img = ""
 		self.lifespan = "10 to 15 years"
 		self.habitat = "Mountain Forest and Jungle"
 		self.geolocation = "North and South America"
@@ -80,9 +72,24 @@ class Bear(Animal):
 		self.order = "Carnivora"
 		self.family = "Ursidae"
 		self.genus = "Ursus"
+		self.img = ""
 		self.lifespan = "15 to 35 years"
 		self.habitat = "Forest and Mountainous Regions"
 		self.geolocation = "North America, South America, Europe, and Asia"
+
+class Wolf(Animal):
+	def __init__(self):
+		super(Animal, self).__init__() # instantiating function for super class
+		self.name = "Wolf"
+		self.phylum = "Chordata"
+		self.classs = "Mammalia"
+		self.order = "Carnivora"
+		self.family = "Canidae"
+		self.genus = "Canis"
+		self.img = ""
+		self.lifespan = "10 to 12 years"
+		self.habitat = "Grass Plains and Woodlands"
+		self.geolocation = "North America, Eurasia, and North Africa"
 
 
 app = webapp2.WSGIApplication([
