@@ -11,17 +11,10 @@ class MainHandler(webapp2.RequestHandler):
 		page = Page()
 
 		# Puma
-		puma = Animal()
-		puma.name = "Puma"
-		puma.phylum = "Chordata"
-		puma.classs = "Mammalia"
-		puma.order = "Carnivora"
-		puma.family = "Felidae"
-		puma.genus = "Puma"
-		puma.lifespan = "10 to 15 years"
-		puma.habitat = "Mountain Forest and Jungle"
-		puma.geolocation = "North and South America"
+		puma = Puma()
 		puma.sound = "haaoom"
+
+		print puma.name
 
 		# Bear
 		bear = Animal()
@@ -79,6 +72,15 @@ class Animal(object):
 class Puma(Animal):
 	def __init__(self):
 		super(Animal, self).__init__() # instantiating function for super class
+		self.name = "Puma"
+		self.phylum = "Chordata"
+		self.classs = "Mammalia"
+		self.order = "Carnivora"
+		self.family = "Felidae"
+		self.genus = "Puma"
+		self.lifespan = "10 to 15 years"
+		self.habitat = "Mountain Forest and Jungle"
+		self.geolocation = "North and South America"
 
 
 app = webapp2.WSGIApplication([
