@@ -53,6 +53,7 @@ class MainHandler(webapp2.RequestHandler):
 
 		self.response.write(page.footer)
 
+# Animal Abstract Class
 class Animal(object):
 	def __init__(self):
 		self.name = ''
@@ -75,8 +76,10 @@ class Animal(object):
 	def sound(self, new_sound):
 		self.__sound = new_sound
 
-# class Puma(Animal):
-# 	def __init__(self):
+class Puma(Animal):
+	def __init__(self):
+		super(Animal, self).__init__() # instantiating function for super class
+
 
 app = webapp2.WSGIApplication([
 	('/', MainHandler)
