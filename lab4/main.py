@@ -33,6 +33,19 @@ class MainHandler(webapp2.RequestHandler):
 		bear.geolocation = "North America, South America, Europe, and Asia"
 		bear.sound = "uuaaah"
 
+		# Wolf
+		wolf = Animal()
+		wolf.name = "Wolf"
+		wolf.phylum = "Chordata"
+		wolf.classs = "Mammalia"
+		wolf.order = "Carnivora"
+		wolf.family = "Canidae"
+		wolf.genus = "Canis"
+		wolf.lifespan = "10 to 12 years"
+		wolf.habitat = "Grass Plains and Woodlands"
+		wolf.geolocation = "North America, Eurasia, and North Africa"
+		wolf.sound = "aaooo"
+
 class Animal(object):
 	def __init__(self):
 		self.name = ''
