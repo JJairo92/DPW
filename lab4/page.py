@@ -9,3 +9,8 @@ class Page(object):
 		<body>
 			<div id="container">
 			<h1>Animals</h1>'''
+
+		self.links = '''<a href="?animal=0" class="links">Puma</a>
+		<a href="?animal=1" class="links">Bear</a>
+		<a href="?animal=2" class="links">Wolf</a>
+		'''
