@@ -6,9 +6,23 @@
 import webapp2
 
 class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write('Hello world!')
+	def get(self):
+		self.response.write('Hello world!')
+
+class Animal(object):
+	def __init__(self):
+		self.name = ''
+		self.phylum = ''
+		self.classs = ''
+		self.order = ''
+		self.family = ''
+		self.genus = ''
+		self.img = ''
+		self.lifespan = ''
+		self.habitat = ''
+		self.geolocation = ''
+		self.sound = ''
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+	('/', MainHandler)
 ], debug=True)
