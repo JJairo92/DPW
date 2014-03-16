@@ -51,21 +51,21 @@ class Animal(object):
 
 class Puma(Animal):
 	def __init__(self):
-		super(Animal, self).__init__() # instantiating function for super class
+		super(Puma, self).__init__() # instantiating function for super class
 		self.name = "Puma"
 		self.phylum = "Chordata"
 		self.classs = "Mammalia"
 		self.order = "Carnivora"
 		self.family = "Felidae"
 		self.genus = "Puma"
-		self.img = ""
+		self.img = "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/PumaNov06.jpg/517px-PumaNov06.jpg"
 		self.lifespan = "10 to 15 years"
 		self.habitat = "Mountain Forest and Jungle"
 		self.geolocation = "North and South America"
 
 class Bear(Animal):
 	def __init__(self):
-		super(Animal, self).__init__() # instantiating function for super class
+		super(Bear, self).__init__() # instantiating function for super class
 		self.name = "Bear"
 		self.phylum = "Chordata"
 		self.classs = "Mammalia"
@@ -79,7 +79,7 @@ class Bear(Animal):
 
 class Wolf(Animal):
 	def __init__(self):
-		super(Animal, self).__init__() # instantiating function for super class
+		super(Wolf, self).__init__() # instantiating function for super class
 		self.name = "Wolf"
 		self.phylum = "Chordata"
 		self.classs = "Mammalia"
