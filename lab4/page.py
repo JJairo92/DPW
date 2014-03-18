@@ -5,6 +5,8 @@ class Page(object):
 		<head>
 			<meta charset="utf-8">
 			<title>Animals</title>
+			<link rel="stylesheet" href="css/main.css" type="text/css" />
+			<link href='http://fonts.googleapis.com/css?family=Revalia|Lato' rel='stylesheet' type='text/css'>
 		</head>
 		<body>
 			<div id="container">
