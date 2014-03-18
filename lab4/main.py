@@ -22,10 +22,11 @@ class MainHandler(webapp2.RequestHandler):
 		wolf = Wolf()
 		wolf.sound = "aaooo"
 
+		# Array to hold all animal classes
 		animals = [puma, bear, wolf]
 
 		self.response.write(page.header + page.links)
-		if self.request.GET:
+		if self.request.GET: # if button is clicked; information will populate
 			animal = int(self.request.GET['animal'])
 
 			name = animals[animal].name
@@ -40,6 +41,7 @@ class MainHandler(webapp2.RequestHandler):
 			geolocation = animals[animal].geolocation
 			sound = animals[animal].sound
 
+			#info will have all the information populated into 3 sections
 			info='''<div id="info">
 			<h3>{name}</h3>
 				<section id="properties">
@@ -67,7 +69,7 @@ class MainHandler(webapp2.RequestHandler):
 				</section>
 
 				<div id="img">
-					<img src="{img}" title="Picture of {name}" alt="Picture of {name}" />
+					<img src="{img}" title="Picture of {name}" alt="Picture of {name}" width="290" height="340" />
 				</div> <!-- Closes "img" div -->
 			</div>'''
 			info = info.format(**locals())

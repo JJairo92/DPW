@@ -6,15 +6,19 @@ class Page(object):
 			<meta charset="utf-8">
 			<title>Animals</title>
 			<link rel="stylesheet" href="css/main.css" type="text/css" />
-			<link href='http://fonts.googleapis.com/css?family=Revalia|Lato' rel='stylesheet' type='text/css'>
+			<link href='http://fonts.googleapis.com/css?family=Fondamento:400,400italic|Lato' rel='stylesheet' type='text/css'>
 		</head>
 		<body>
 			<div id="container">
 			<h1>Animals</h1>'''
 
-		self.links = '''<a href="?animal=0" class="links">Puma</a>
-		<a href="?animal=1" class="links">Bear</a>
-		<a href="?animal=2" class="links">Wolf</a>
+		self.links = '''<nav>
+		<ul>
+			<li><a href="?animal=0" class="links">Puma</a></li>
+			<li><a href="?animal=1" class="links">Bear</a></li>
+			<li><a href="?animal=2" class="links">Wolf</a></li>
+		</ul>
+		</nav>
 		'''
 
 		self.footer = '''
