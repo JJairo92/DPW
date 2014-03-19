@@ -11,3 +11,12 @@ class Page(object):
 		<body>
 			<div id="container">
 			<h1>API</h1>'''
+
+		self.footer = '''
+		</body>
+
+		<footer>
+			<p>Copyright &copy; 2014 <strong>API.</strong></p>
+		</footer>
+		</div> <!-- Closes "container" div -->
+	</html>'''
