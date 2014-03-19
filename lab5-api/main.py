@@ -17,8 +17,10 @@ class MainHandler(webapp2.RequestHandler):
 		if self.request.GET:
 			# API things
 			artist = self.request.GET['artist']
+			artist = artist.replace(" ","%20")
+			print artist
 			url = "http://api.bandsintown.com/artists/"+artist+"/events?format=xml&api_version=2.0&app_id=artistElookup"
-			request = urllib2.Request(url + artist) # assemble request
+			request = urllib2.Request(url) # assemble request
 			opener = urllib2.build_opener() # use urllib2 to create an object to get the url
 			result = opener.open(request) # use url to get a result - request info from api
 
