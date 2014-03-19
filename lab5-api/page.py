@@ -12,7 +12,7 @@ class Page(object):
 			<div id="container">
 			<h1>API</h1>'''
 
-		self.__form = '''<form method="GET">
+		self.form = '''<form method="GET">
 			<label for="artist">Artist:</label>
 
 			<input type="text" name="artist" autofocus="autofocus" placeholder="Search artist" />
@@ -34,7 +34,7 @@ class Page(object):
 		return self.header
 
 	def form(self):
-		return self.__form
+		return self.form
 
 	def footer(self):
 		return self.footer
