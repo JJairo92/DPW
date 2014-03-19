@@ -12,6 +12,15 @@ class Page(object):
 			<div id="container">
 			<h1>API</h1>'''
 
+		self.__form = '''<form method="GET">
+			<label for="artist">Artist:</label>
+
+			<input type="text" name="artist" autofocus="autofocus" placeholder="Search artist" />
+			
+			<input type="submit" value="Get Events!" />
+		</form>
+		'''
+
 		self.footer = '''
 		</body>
 
@@ -23,6 +32,9 @@ class Page(object):
 
 	def header(self):
 		return self.header
+
+	def form(self):
+		return self.__form
 
 	def footer(self):
 		return self.footer
