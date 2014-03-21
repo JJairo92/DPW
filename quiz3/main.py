@@ -28,6 +28,10 @@ class Kill(VideoGame):
 		self._developer = "Unshaken Studios"
 		self._publisher = "Life+Death"
 
+	@property
+	def developer(self):
+		return self._developer
+
 app = webapp2.WSGIApplication([
 	('/', VideoGame)
 ], debug=True)
