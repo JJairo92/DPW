@@ -11,6 +11,13 @@ class VideoGame(webapp2.RequestHandler):
 		self._name = "Name"
 		self._genre = "Genre" #protected attribute
 
+		# uncomment below to check that attributes are overwritten
+		# kill = Kill()
+		# self.response.write(kill.name+"<br />" +kill.genre+"<br />" +kill.developer+"<br />")
+
+		# live = Live()
+		# self.response.write(live.name+"<br />" +live.genre+"<br />" +live.publisher+"<br />")
+
 	@property
 	def name(self): #method 1 (quiz instructions did not say "in addition to property methods")
 		return self._name
@@ -29,7 +36,7 @@ class Kill(VideoGame):
 		self._publisher = "Life+Death"
 
 	@property
-	def developer(self): #property for the subclass
+	def developer(self): #additional property for subclass
 		return self._developer
 
 # Subclass 2
@@ -42,7 +49,7 @@ class Live(VideoGame):
 		self._publisher = "Perfected Forever"
 
 	@property
-	def publisher(self):
+	def publisher(self): # additional property for subclass
 		return self._publisher
 
 app = webapp2.WSGIApplication([
