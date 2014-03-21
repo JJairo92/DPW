@@ -5,10 +5,14 @@
 
 import webapp2
 
-class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write('Hello world!')
+# Abstract Class
+class VideoGame(webapp2.RequestHandler):
+	def get(self):
+		self._name = ""
+		self._genre = ""
+		self._developer = ""
+		self._publisher = ""
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+	('/', VideoGame)
 ], debug=True)
