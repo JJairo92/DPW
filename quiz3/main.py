@@ -13,6 +13,14 @@ class VideoGame(webapp2.RequestHandler):
 		self._developer = ""
 		self._publisher = ""
 
+	@property
+	def name(self):
+		return self._name
+
+	@property
+	def genre(self):
+		return self._genre
+
 app = webapp2.WSGIApplication([
 	('/', VideoGame)
 ], debug=True)
