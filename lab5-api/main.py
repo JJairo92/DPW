@@ -12,7 +12,7 @@ class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		page = Page() # variable to hold "Page" class form page.py
 
-		self.response.write(page.header + page.form + page.footer)
+		self.response.write(page.header + page.form)
 
 		if self.request.GET:
 			# API things
@@ -36,7 +36,7 @@ class MainHandler(webapp2.RequestHandler):
 				content += "<h4>"+event.getElementsByTagName('formatted_datetime')[0].firstChild.nodeValue+"</h4>"
 				content += "<br />"
 
-			self.response.write(content)
+			self.response.write(content + page.footer)
 
 
 app = webapp2.WSGIApplication([
