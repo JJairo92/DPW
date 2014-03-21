@@ -9,7 +9,7 @@ import webapp2
 class VideoGame(webapp2.RequestHandler):
 	def get(self):
 		self._name = "Name"
-		self._genre = "Genre"
+		self._genre = "Genre" #protected attribute
 
 	@property
 	def name(self): #method 1 (quiz instructions did not say "in addition to property methods")
@@ -40,6 +40,10 @@ class Live(VideoGame):
 		self._genre = "RPG"
 		self._developer = "Trident Souls"
 		self._publisher = "Perfected Forever"
+
+	@property
+	def publisher(self):
+		return self._publisher
 
 app = webapp2.WSGIApplication([
 	('/', VideoGame)
