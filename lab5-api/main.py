@@ -18,25 +18,33 @@ class MainHandler(webapp2.RequestHandler):
 			# API things
 			artist = self.request.GET['artist']
 			artist = artist.replace(" ","%20")
-			print artist
 			url = "http://api.bandsintown.com/artists/"+artist+"/events?format=xml&api_version=2.0&app_id=artistElookup"
+
 			request = urllib2.Request(url) # assemble request
 			opener = urllib2.build_opener() # use urllib2 to create an object to get the url
 			result = opener.open(request) # use url to get a result - request info from api
 
 			xmldoc = minidom.parse(result) # parses the result
-			events = xmldoc.getElementsByTagName('event')
 
-			img = xmldoc.getElementsByTagName('image_url')[0].firstChild.nodeValue
-			self.response.write("<img src='"+img+"' />")
-			content = "<h2>"+xmldoc.getElementsByTagName('name')[0].firstChild.nodeValue+"</h2><br />"
+			self.response.write("<h2>"+xmldoc.getElementsByTagName('name')[0].firstChild.nodeValue+"</h2>")
+			self.response.write("<img src='"+xmldoc.getElementsByTagName('image_url')[0].firstChild.nodeValue+"' />")
+			content = ""
+			events = xmldoc.getElementsByTagName('event')
 
 			for event in events:
 				content += "<h3>"+event.getElementsByTagName('title')[0].firstChild.nodeValue+"</h3>"
 				content += "<h4>"+event.getElementsByTagName('formatted_datetime')[0].firstChild.nodeValue+"</h4>"
+				content += "<h4>"+event.getElementsByTagName('formatted_location')[0].firstChild.nodeValue+"</h4>"
+				content += "<h4>"+event.getElementsByTagName('ticket_status')[0].firstChild.nodeValue+"</h4>"
+				try:
+					content += "<a href='"+event.getElementsByTagName('ticket_url')[0].firstChild.nodeValue+"' target='_blank'>Buy Tickets</a>"
+				except:
+					pass
 				content += "<br />"
 
-			self.response.write(content + page.footer)
+			self.response.write(content)
+
+		self.response.write(page.footer)
 
 
 app = webapp2.WSGIApplication([
