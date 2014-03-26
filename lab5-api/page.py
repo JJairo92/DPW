@@ -10,14 +10,12 @@ class Page(object):
 		</head>
 		<body>
 			<div id="container">
-			<h1>API</h1>'''
+			<h1><img src="images/logo.png" /></h1>'''
 
 		self.form = '''<form method="GET">
-			<label for="artist">Artist:</label>
-
-			<input type="text" name="artist" autofocus="autofocus" placeholder="Search artist" />
+		<input id="search-box" type="text" name="artist" autofocus="autofocus" placeholder="Search artist" />
 			
-			<input type="submit" value="Get Events!" />
+		<input type="submit" value="Get Events!" />
 		</form>
 		'''
 
@@ -25,7 +23,7 @@ class Page(object):
 		</body>
 
 		<footer>
-			<p>Copyright &copy; 2014 <strong>API.</strong></p>
+			<p>Copyright &copy; 2014 <strong>Artist E.Lookup.</strong></p>
 		</footer>
 		</div> <!-- Closes "container" div -->
 	</html>'''
