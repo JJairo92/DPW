@@ -51,11 +51,20 @@ class ArtistModel(object):
 		events = self.__xmldoc.getElementsByTagName('event')
 
 		for event in events:
-			self.__data.event = event.getElementsByTagName('title')[0].firstChild.nodeValue
-			self.__data.date = event.getElementsByTagName('formatted_datetime')[0].firstChild.nodeValue
-			self.__data.location = event.getElementsByTagName('formatted_location')[0].firstChild.nodeValue
-			self.__data.ticket_status = event.getElementsByTagName('ticket_status')[0].firstChild.nodeValue
-			self.__data.ticket_url = event.getElementsByTagName('ticket_url')[0].firstChild.nodeValue
+			event_dict = dict()
+
+			event_name = event.getElementsByTagName('title')[0].firstChild.nodeValue
+			event_date = event.getElementsByTagName('formatted_datetime')[0].firstChild.nodeValue
+			event_location = event.getElementsByTagName('formatted_location')[0].firstChild.nodeValue
+			event_ticket_status = event.getElementsByTagName('ticket_status')[0].firstChild.nodeValue
+			try:
+				event_ticket_url = event.getElementsByTagName('ticket_url')[0].firstChild.nodeValue
+			except:
+				pass
+
+			event_dict = [event_name, event_date, event_location, event_ticket_status, event_ticket_url]
+
+			self.__data.events.append(event_dict)
 
 	@property
 	def data(self):
@@ -66,25 +75,27 @@ class ArtistData(object):
 		'''This class holds the artist data taken from the api'''
 		self.name = ""
 		self.img = ""
-		self.event = ""
-		self.date = ""
-		self.location = ""
-		self.ticket_status = ""
-		self.ticket_url = ""
+		self.events = []
 
 class ArtistView(object):
 	def __init__(self, data):
-		self.__content = "<h2>"+data.name+" Events</h2>"
-		self.__content += "<img src='"+data.img+"' title='Image of artist "+data.name+"'' />"
-		self.__content += "<h3>"+data.event+"</h3>"
-		self.__content += "<h4>"+data.date+"</h4>"
-		self.__content += "<h4>"+data.location+"</h4>"
-		self.__content += "<h4>"+data.ticket_status+"</h4>"
-		try:
-			self.__content += "<a href='"+data.ticket_url+"' target='_blank'>Buy Tickets</a>"
-		except:
-			pass
-		self.__content += "<br />"
+		self.__content = "<h2>"+data.name+" Concerts</h2>"
+		self.__content += "<img src='"+data.img+"' title='Image of artist "+data.name+"'' alt='Image of artist "+data.name+"'' />"
+
+		for event in data.events:
+			self.__content += "<div class='event'><h3>"+event[0]+"</h3>"
+			self.__content += "<div class='dates'><h4>City</h4>"
+			self.__content += "<p>"+event[1]+"</p></div><!-- Closes 'dates' div -->"
+			self.__content += "<div class='locations'><h4>Location</h4>"
+			self.__content += "<p>"+event[2]+"</p></div><!-- Closes 'locations' div -->"
+			self.__content += "<div class='statuses'><h4>Ticket Availability</h4>"
+			self.__content += "<p>"+event[3]+"</p></div><!-- Closes 'statuses' div-->"
+			try:
+				self.__content += "<a href='"+event[4]+"' target='_blank'>Buy Tickets</a>"
+			except:
+				pass
+
+			self.__content += "</div><!-- Closes 'event' div -->"
 
 	@property
 	def content(self):
