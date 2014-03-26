@@ -88,12 +88,12 @@ class ArtistData(object):
 class ArtistView(object):
 	'''This class displays all the information on the page'''
 	def __init__(self, data):
-		self.__content = "<h2>"+data.name+" Concerts</h2>" # Artist name
-		self.__content += "<img src='"+data.img+"' title='Image of artist "+data.name+"'' alt='Image of artist "+data.name+"'' />" # Image of artist
+		self.__content = "<div id='name-picture'><h2>"+data.name+" Concerts</h2>" # Artist name
+		self.__content += "<img src='"+data.img+"' title='Image of artist "+data.name+"'' alt='Image of artist "+data.name+"'' /></div>" # Image of artist
 
 		# loops through the events array in ArtistData class so all the information can be displayed
 		for event in data.events:
-			self.__content += "<div class='event'><h3>"+event[0]+"</h3>"
+			self.__content += "<div id='events'><div class='event'><h3>"+event[0]+"</h3>"
 			self.__content += "<div class='dates'><h4>City</h4>"
 			self.__content += "<p>"+event[1]+"</p></div><!-- Closes 'dates' div -->"
 			self.__content += "<div class='locations'><h4>Location</h4>"
@@ -105,7 +105,7 @@ class ArtistView(object):
 			except:
 				pass
 
-			self.__content += "</div><!-- Closes 'event' div -->"
+			self.__content += "</div><!-- Closes 'event' div --></div><!-- Closes 'events' div -->"
 
 	@property
 	def content(self):

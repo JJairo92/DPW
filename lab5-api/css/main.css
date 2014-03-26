@@ -23,8 +23,7 @@ h2 {
 	font-family: 'Crimson Text', serif;
     font-weight: 700;
     font-style: oblique;
-    text-decoration: line-through;
-	margin-left: 5%;
+	margin-left: 0;
 	color: #6f8dad;
 	font-size: 24pt;
 	clear: both;
@@ -36,19 +35,21 @@ p {
 }
 
 #search-box {
-	margin: 1% 3% 1% 39%;
+	margin: 1% 2% 1% 35%;
 	float: left;
 	color: #747373;
-    padding: 4px 10px 4px 0;
+    padding: 10px 90px 10px 0;
+    font-size: 10pt;
 }
 
 input[type="submit"] {
 	float: left;
-	margin-top: 5px;
+	clear: right;
+	margin-top: 1%;
 	font-family: 'Crimson Text', serif;
 	font-size: 12pt;
 	color: #ffffff;
-	padding: 4px 15px;
+	padding: 6px 15px;
 	background: -moz-linear-gradient(
 		top,
 		#6f8dad 0%,
@@ -80,9 +81,9 @@ a {
 	float: left;
 	margin-top: 5px;
 	font-family: 'Crimson Text', serif;
-	font-size: 12pt;
+	font-size: 13pt;
 	color: #ffffff;
-	padding: 3px 12px;
+	padding: 4px 13px;
 	background: -moz-linear-gradient(
 		top,
 		#6f8dad 0%,
@@ -116,7 +117,20 @@ footer {
 }
 
 footer p {
-	margin-top: 2%;
+	margin-top: 6%;
+}
+
+#name-picture {
+	float:left;
+	clear: left;
+	width: 20%;
+	margin-left: 5%;
+}
+
+#events {
+	float: right;
+	width: 70%;
+	margin-right: 5%;
 }
 
 /* --------------- Events --------------- */
@@ -125,7 +139,8 @@ footer p {
 	width: 90%;
 	clear: left;
 	margin-left: 5%;
-    border: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    overflow: hidden;
 }
 
 .dates, .locations, .statuses, .urls {
@@ -137,6 +152,6 @@ h3 {
 	margin: 2% 2%;
 	font-family: 'Crimson Text', serif;
 	font-weight: 700;
-    font-style: italic;
+    font-style: bold;
     color: #76a2d1;
 }
