@@ -8,6 +8,8 @@ from page import Page
 import urllib2
 from xml.dom import minidom
 
+'''This site asks the user for an music artist name and returns that artist's upcoming concerts'''
+
 class ArtistController(webapp2.RequestHandler):
 	def get(self):
 		'''This is the main controller for the Events Lookup App'''
