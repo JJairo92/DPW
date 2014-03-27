@@ -1,7 +1,7 @@
 # Jairo Jurado
 # DPW
 # 03/18/2014
-# Lab 5 - Bands in Town API
+# Lab 5 - Artist E. Lookup (Bands in Town API)
 
 import webapp2
 from page import Page
@@ -10,7 +10,7 @@ from xml.dom import minidom
 
 class ArtistController(webapp2.RequestHandler):
 	def get(self):
-		'''This class'''
+		'''This is the main controller for the Events Lookup App'''
 		page = Page() # variable to hold "Page" class form page.py
 
 		self.response.write(page.header + page.form) # writes header and search box to page
@@ -18,7 +18,7 @@ class ArtistController(webapp2.RequestHandler):
 		if self.request.GET:
 			# sets a variable to the user input
 			artist = self.request.GET['artist']
-			artist = artist.replace(" ","%20")
+			artist = artist.replace(" ","%20") # replaces/converts spaces to %20
 
 			am = ArtistModel(artist) # calls ArtistModel Class and assigns it to "am"
 			av = ArtistView(am.data) # calls ArtistView Class and assigns it to "av"
@@ -48,8 +48,17 @@ class ArtistModel(object):
 		# parses the result
 		self.__xmldoc = minidom.parse(self.__result)
 		self.__data = ArtistData() # variable to hold the information being requested
-		self.__data.name = self.__xmldoc.getElementsByTagName('name')[0].firstChild.nodeValue # variable to hold the artist's name
-		self.__data.img = self.__xmldoc.getElementsByTagName('image_url')[0].firstChild.nodeValue # variable to hold the image url
+
+		# if there are no tour dates for that artist, there will be no image or artist name displayed. If a random letters are typed; there will be a 404 error. (Validation for site wasn't done; it was not in the rubric and I couldn't get it to work.)
+		try:
+			self.__data.name = self.__xmldoc.getElementsByTagName('name')[0].firstChild.nodeValue # variable to hold the artist's name
+		except:
+			pass
+
+		try:
+			self.__data.img = self.__xmldoc.getElementsByTagName('image_url')[0].firstChild.nodeValue # variable to hold the image url
+		except:
+			pass
 
 		events = self.__xmldoc.getElementsByTagName('event') # xml tag where everything inside will be looped through
 
@@ -88,12 +97,22 @@ class ArtistData(object):
 class ArtistView(object):
 	'''This class displays all the information on the page'''
 	def __init__(self, data):
-		self.__content = "<div id='name-picture'><h2>"+data.name+" Concerts</h2>" # Artist name
-		self.__content += "<img src='"+data.img+"' title='Image of artist "+data.name+"'' alt='Image of artist "+data.name+"'' /></div>" # Image of artist
+		try:
+			self.__content = "<h2>"+data.name+" Concerts</h2>" # Artist name
+		except:
+			pass
+
+		try:
+			self.__content += "<div id='name-picture'><img src='"+data.img+"' title='Image of artist "+data.name+"'' alt='Image of artist "+data.name+"'' /></div><!-- Closes 'name-picture' div -->" # Image of artist
+		except:
+			pass
 
 		# loops through the events array in ArtistData class so all the information can be displayed
 		for event in data.events:
-			self.__content += "<div id='events'><div class='event'><h3>"+event[0]+"</h3>"
+			try:
+				self.__content += "<div id='events'><div class='event'><h3>"+event[0]+"</h3>"
+			except:
+				pass
 			self.__content += "<div class='dates'><h4>City</h4>"
 			self.__content += "<p>"+event[1]+"</p></div><!-- Closes 'dates' div -->"
 			self.__content += "<div class='locations'><h4>Location</h4>"
@@ -109,7 +128,7 @@ class ArtistView(object):
 
 	@property
 	def content(self):
-		return self.__content
+		return self.__content # returns the content so it can displayed on the page
 
 app = webapp2.WSGIApplication([
 	('/', ArtistController)

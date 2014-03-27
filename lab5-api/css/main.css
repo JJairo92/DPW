@@ -8,9 +8,9 @@
 /* --------------- Main --------------- */
 body {
 	background-color: #eee;
-    font-family: 'Crimson Text', serif;
-    font-weight: 400;
-    font-style: normal;
+	font-family: 'Crimson Text', serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
 h1 {
@@ -21,9 +21,9 @@ h1 {
 
 h2 {
 	font-family: 'Crimson Text', serif;
-    font-weight: 700;
-    font-style: oblique;
-	margin-left: 0;
+	font-weight: 700;
+	font-style: oblique;
+	margin: 10% 0 2% 6%;
 	color: #6f8dad;
 	font-size: 24pt;
 	clear: both;
@@ -31,15 +31,15 @@ h2 {
 
 p {
 	margin-left: 2%;
-    color: #4e4e4e;
+	color: #4e4e4e;
 }
 
 #search-box {
 	margin: 1% 2% 1% 35%;
 	float: left;
 	color: #747373;
-    padding: 10px 90px 10px 0;
-    font-size: 10pt;
+	padding: 10px 90px 10px 0;
+	font-size: 10pt;
 }
 
 input[type="submit"] {
@@ -79,9 +79,10 @@ input[type="submit"] {
 a {
 	text-decoration: none;
 	float: left;
-	margin-top: 5px;
+	margin-top: 3%;
+	margin-left: 6%;
 	font-family: 'Crimson Text', serif;
-	font-size: 13pt;
+	font-size: 12pt;
 	color: #ffffff;
 	padding: 4px 13px;
 	background: -moz-linear-gradient(
@@ -117,41 +118,63 @@ footer {
 }
 
 footer p {
-	margin-top: 6%;
+	margin-top: 5%;
 }
 
 #name-picture {
+	padding-top: 2%;
 	float:left;
 	clear: left;
-	width: 20%;
-	margin-left: 5%;
+	width: 18%;
+	margin-left: 6%;
 }
 
 #events {
 	float: right;
-	width: 70%;
-	margin-right: 5%;
+	width: 71%;
+	margin-right: 4%;
 }
 
 /* --------------- Events --------------- */
-
 .event {
 	width: 90%;
 	clear: left;
 	margin-left: 5%;
-    border-bottom: 1px solid #2a2a2a;
-    overflow: hidden;
+	border-bottom: 1px solid #2a2a2a;
+	overflow: hidden;
 }
 
 .dates, .locations, .statuses, .urls {
 	float: left;
-	width: 25%;
+}
+
+.dates {
+	width: 32%;
+}
+
+.locations {
+	width: 26%;
+}
+
+.statuses {
+	width: 20%;
+}
+
+.urls {
+	width: 32%;
 }
 
 h3 {
+	margin-bottom: 2%;
+	font-family: 'Crimson Text', serif;
+	font-weight: 700;
+	font-style: bold;
+	color: #76a2d1;
+}
+
+h4 {
 	margin: 2% 2%;
 	font-family: 'Crimson Text', serif;
 	font-weight: 700;
-    font-style: bold;
-    color: #76a2d1;
+	font-style: bold;
 }

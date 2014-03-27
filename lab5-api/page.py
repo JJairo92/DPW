@@ -4,7 +4,7 @@ class Page(object):
 	<html lang="en">
 		<head>
 			<meta charset="utf-8">
-			<title>API | Artist E.Lookup</title>
+			<title>Artist E.Lookup</title>
 			<link rel="stylesheet" href="css/main.css" type="text/css" />
 			<link href='http://fonts.googleapis.com/css?family=Fondamento:400,400italic|Lato' rel='stylesheet' type='text/css'>
 		</head>
@@ -13,7 +13,7 @@ class Page(object):
 			<h1><img src="images/logo.png" /></h1>'''
 
 		self.form = '''<form method="GET">
-		<input id="search-box" type="text" name="artist" autofocus="autofocus" placeholder="Search artist" />
+		<input id="search-box" type="text" name="artist" autofocus="autofocus" placeholder="Search artist" required="required" />
 			
 		<input type="submit" value="Get Events!" />
 		</form>
@@ -23,7 +23,7 @@ class Page(object):
 		</body>
 
 		<footer>
-			<p>Copyright &copy; 2014 <strong>Artist E.Lookup.</strong></p>
+			<p>Copyright &copy; 2014 <strong>Artist E.Lookup.</strong> This is a fictional company.</p>
 		</footer>
 		</div> <!-- Closes "container" div -->
 	</html>'''
