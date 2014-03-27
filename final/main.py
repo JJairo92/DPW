@@ -12,6 +12,10 @@ class MusicController(webapp2.RequestHandler):
 
 		self.response.write(page.header + page._footer)
 
+class MusicModel(object):
+	def __init__(self):
+		pass
+
 class MusicData(object):
 	def __init__(self):
 		self.title = ""
@@ -20,6 +24,10 @@ class MusicData(object):
 		self.year = ""
 		self.label = ""
 		self.cover = ""
+
+class MusicView(object):
+	def __init__(self):
+		pass
 
 app = webapp2.WSGIApplication([
 	('/', MusicController)
