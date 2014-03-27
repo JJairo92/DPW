@@ -25,7 +25,7 @@ class ArtistController(webapp2.RequestHandler):
 			am = ArtistModel(artist) # calls ArtistModel Class and assigns it to "am"
 			av = ArtistView(am.data) # calls ArtistView Class and assigns it to "av"
 
-			self.response.write(av.content) # prints the content acquired from api
+			self.response.write(av.content) # writes the content acquired from api to page
 
 		self.response.write(page.footer) # writes footer to page
 
