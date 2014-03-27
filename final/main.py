@@ -14,6 +14,9 @@ class MusicController(webapp2.RequestHandler):
 
 		self.response.write(page.header)
 
+		am = MusicModel()
+		# av = MusicView()
+
 		self.response.write(page._footer)
 
 class MusicModel(object):
@@ -41,6 +44,10 @@ class MusicModel(object):
 			song_dict[titles]
 
 			self.__data.songs.append(song_dict)
+
+	@property
+	def data(self):
+		return self.__data
 
 class MusicView(object):
 	def __init__(self):
