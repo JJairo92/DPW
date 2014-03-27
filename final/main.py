@@ -36,7 +36,11 @@ class MusicModel(object):
 		for song in songs:
 			song_dict = dict()
 
-			
+			titles = song.getElementsByTagName('title')[0].firstChild.nodeValue
+
+			song_dict[titles]
+
+			self.__data.songs.append(song_dict)
 
 class MusicView(object):
 	def __init__(self):
@@ -44,12 +48,7 @@ class MusicView(object):
 
 class MusicData(object):
 	def __init__(self):
-		self.title = ""
-		self.artist = ""
-		self.length = ""
-		self.year = ""
-		self.label = ""
-		self.cover = ""
+		self.songs = []
 
 app = webapp2.WSGIApplication([
 	('/', MusicController)
