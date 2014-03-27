@@ -17,3 +17,9 @@ class Page(object):
 			<p>Copyright &copy; 2014 <strong>Music Practical.</strong></p>
 		</footer>
 	</html>'''
+
+	def header(self):
+		return self.header
+
+	def footer(self):
+		return self._footer
