@@ -9,3 +9,11 @@ class Page(object):
 		</head>
 		<body>
 			<h1>Music Practical</h1>'''
+
+		self._footer = '''
+		</body>
+
+		<footer>
+			<p>Copyright &copy; 2014 <strong>Music Practical.</strong></p>
+		</footer>
+	</html>'''
