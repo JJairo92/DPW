@@ -27,8 +27,20 @@ class MusicModel(object):
 		self.__result = self.__opener.open(self.__request)
 		self.sort()
 
-	# def sort(self):
+	def sort(self):
+		self.__xmldoc = minidom.parse(self.__result)
+		self.__data = MusicData()
 
+		songs = self.__xmldoc.getElementsByTagName('track')
+
+		for song in songs:
+			song_dict = dict()
+
+			
+
+class MusicView(object):
+	def __init__(self):
+		pass
 
 class MusicData(object):
 	def __init__(self):
@@ -38,10 +50,6 @@ class MusicData(object):
 		self.year = ""
 		self.label = ""
 		self.cover = ""
-
-class MusicView(object):
-	def __init__(self):
-		pass
 
 app = webapp2.WSGIApplication([
 	('/', MusicController)
