@@ -11,11 +11,10 @@ from xml.dom import minidom
 class MusicController(webapp2.RequestHandler):
 	def get(self):
 		page = Page()
+		mm = MusicModel()
+		mv = MusicView(mm.data)
 
-		self.response.write(page.header)
-
-		am = MusicModel()
-		# av = MusicView()
+		self.response.write(page.header + mv.content)
 
 		self.response.write(page._footer)
 
@@ -40,8 +39,9 @@ class MusicModel(object):
 			song_dict = dict()
 
 			titles = song.getElementsByTagName('title')[0].firstChild.nodeValue
+			artists = song.getElementsByTagName('artist')[0].firstChild.nodeValue
 
-			song_dict[titles]
+			song_dict = [titles, artists]
 
 			self.__data.songs.append(song_dict)
 
@@ -49,13 +49,19 @@ class MusicModel(object):
 	def data(self):
 		return self.__data
 
-class MusicView(object):
-	def __init__(self):
-		pass
-
 class MusicData(object):
 	def __init__(self):
 		self.songs = []
+
+class MusicView(object):
+	def __init__(self, data):
+		self.__content = ""
+		for song in data.songs:
+			self.__content += "<a href='?song=0'>"+song[0]+"</a>"
+
+	@property
+	def content(self):
+		return self.__content
 
 app = webapp2.WSGIApplication([
 	('/', MusicController)
