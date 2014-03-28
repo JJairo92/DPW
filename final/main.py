@@ -4,7 +4,7 @@
 # Music Practical
 
 import webapp2
-from page import Page
+from page import Page # imports Page class from page.py
 import urllib2
 from xml.dom import minidom
 
@@ -21,23 +21,27 @@ class MusicController(webapp2.RequestHandler):
 			'''I did not know what other way to do it so I'm displaying the information through the controller and not the view. I do know how to use a View Class as you'll be able to see with the buttons I created by using the MusicView Class. However, for this particular case I did not know how to display each individual album's information'''
 			song = int(self.request.GET['song'])
 
+			# creates a variable for each information so that it can be placed in one whole string later to be formatted
 			title = mm.data.songs[song][0]
 			artist = mm.data.songs[song][1]
 			length = mm.data.songs[song][2]
 			year = mm.data.songs[song][3]
 			label = mm.data.songs[song][4]
 			cover = mm.data.songs[song][5]
+			track = mm.data.songs[song][6]
 
+			# string to hold everything
 			info = '''<h2>{title}</h2>
 			<img src="{cover}" />
 			<p><strong>Artist: </strong>{artist}</p>
 			<p><strong>Length: </strong>{length}</p>
 			<p><strong>Year: </strong>{year}</p>
-			<p><strong>Label: </strong>{label}</p>'''
-			info = info.format(**locals())
-			self.response.write(info)
+			<p><strong>Label: </strong>{label}</p>
+			<audio src={track} controls="controls"></audio>'''
+			info = info.format(**locals()) # formats the string to include the information from each variable declared above
+			self.response.write(info) # writes "info" to page
 
-		self.response.write(page._footer)
+		self.response.write(page._footer) # writes footer to page
 
 class MusicModel(object):
 	'''This class organizes the xml data and uses the MusicData class to put it in the songs array'''
@@ -48,7 +52,7 @@ class MusicModel(object):
 		self.send() # calls send function
 
 	def send(self):
-		self.__result = self.__opener.open(self.__request)
+		self.__result = self.__opener.open(self.__request) # request information from api
 		self.sort() # calls sort function
 
 	def sort(self):
@@ -68,8 +72,12 @@ class MusicModel(object):
 			years = song.getElementsByTagName('year')[0].firstChild.nodeValue
 			labels = song.getElementsByTagName('label')[0].firstChild.nodeValue
 			covers = song.getElementsByTagName('cover')[0].firstChild.nodeValue
+			try: # "tries" to see if there is an attribute because not all "track" xml tags have a song
+				tracks = song.attributes['file'].value
+			except:
+				pass
 
-			song_dict = [titles, artists, lengths, years, labels, covers] # each variable is placed in the dictionary
+			song_dict = [titles, artists, lengths, years, labels, covers, tracks] # each variable is placed in the dictionary
 
 			self.__data.songs.append(song_dict) # dictionary is appended to the songs array in MusicData
 
