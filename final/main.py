@@ -94,10 +94,8 @@ class MusicView(object):
 	'''This class displays everything to the user; except for the information acquired from the xml data. The buttons are displayed by using this class'''
 	def __init__(self, data):
 		self.__buttons = ""
-		print data.songs[0][0]
 
 		num = 0 # number to be used for the links
-
 		# adds each button to the "self.__buttons" attribute
 		for song in data.songs:
 			self.__buttons += "<a href='?song="+str(num)+"'><button>"+song[0]+"</button></a>"
