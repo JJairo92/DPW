@@ -9,6 +9,7 @@ body {
 	background-color: #eee;
 }
 
-button {
+a {
+	text-decoration: none;
 	margin-right: 1%;
 }
