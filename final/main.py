@@ -8,6 +8,8 @@ from page import Page # imports Page class from page.py
 import urllib2
 from xml.dom import minidom
 
+'''I chose the music api for my practical'''
+
 class MusicController(webapp2.RequestHandler):
 	'''This is the main controller for this music app'''
 	def get(self):
