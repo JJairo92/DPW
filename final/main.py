@@ -57,7 +57,7 @@ class MusicView(object):
 	def __init__(self, data):
 		self.__content = ""
 		for song in data.songs:
-			self.__content += "<a href='?song=0'>"+song[0]+"</a>"
+			self.__content += "<button href='?song=0'>"+song[0]+"</button>"
 
 	@property
 	def content(self):
